@@ -1,9 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',      // This creates the static files for GitHub
+  output: 'export',
+  basePath: '/mayores', // Tells Next.js your site is at /mayores/
   images: {
-    unoptimized: true,   // GitHub Pages doesn't support Next.js image optimization
+    unoptimized: true,
   },
 };
 

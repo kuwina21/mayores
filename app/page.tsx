@@ -1,37 +1,43 @@
-export default function Home() {
+import Link from 'next/link';
+
+export default function Projects() {
+  const myProjects = [
+    { title: "E-Commerce App", tech: "Next.js • Tailwind", desc: "A modern shopping experience." },
+    { title: "AI Dashboard", tech: "React • OpenAI", desc: "Data visualization for AI metrics." },
+    { title: "Portfolio V1", tech: "HTML • CSS", desc: "My very first coding project." },
+  ];
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-[#020617] text-white px-4">
-      {/* Background Decorative Glow */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-900/20 blur-[120px] rounded-full"></div>
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-900/20 blur-[120px] rounded-full"></div>
+    <main className="min-h-screen bg-[#020617] text-white p-8 md:p-24">
+      {/* Navigation Header */}
+      <nav className="flex justify-between items-center mb-16">
+        <Link href="/" className="text-xl font-bold tracking-tighter">MAYORES</Link>
+        <Link href="/" className="text-gray-400 hover:text-white transition-colors">← Back Home</Link>
+      </nav>
+
+      <header className="mb-12">
+        <h2 className="text-4xl md:text-6xl font-bold mb-4">Selected Work</h2>
+        <p className="text-gray-400 text-lg">A collection of things I've built with code.</p>
+      </header>
+
+      {/* The Bento Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {myProjects.map((project, index) => (
+          <div 
+            key={index}
+            className="group relative p-8 rounded-3xl border border-gray-800 bg-gray-900/50 backdrop-blur-sm hover:border-blue-500/50 transition-all duration-500"
+          >
+            {/* UIVERSE ELEMENT GOES HERE */}
+            <div className="mb-4 text-blue-400 font-mono text-sm">{project.tech}</div>
+            <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+            <p className="text-gray-400 mb-6">{project.desc}</p>
+            
+            <button className="text-sm font-bold flex items-center gap-2 group-hover:text-blue-400 transition-colors">
+              VIEW PROJECT <span className="group-hover:translate-x-1 transition-transform">→</span>
+            </button>
+          </div>
+        ))}
       </div>
-
-      <div className="z-10 text-center">
-        <h1 className="text-7xl md:text-9xl font-extrabold tracking-tighter mb-4 bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent">
-          KUWINA
-        </h1>
-        
-        <p className="text-gray-400 text-lg md:text-2xl max-w-2xl mx-auto mb-10 font-light">
-          Building digital experiences with <span className="text-blue-400">Next.js</span> and <span className="text-purple-400">Modern UI</span>.
-        </p>
-
-        <div className="flex flex-wrap justify-center gap-4">
-          {/* Main Action Button */}
-          <button className="px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-all duration-300">
-            View My Projects
-          </button>
-          
-          {/* Secondary Button */}
-          <button className="px-8 py-3 border border-gray-700 text-white font-semibold rounded-full hover:bg-gray-800 transition-all duration-300">
-            Contact Me
-          </button>
-        </div>
-      </div>
-
-      <footer className="absolute bottom-8 text-gray-600 text-sm">
-        © 2025 Kuwina. Built with GitHub Hosting.
-      </footer>
     </main>
   );
 }
