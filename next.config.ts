@@ -2,9 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
-  // IMPORTANT: This must match your GitHub Repository Name EXACTLY
+  // IMPORTANT: This handles all links/images for Main, 001, and 002
   basePath: "/mayores",
-  assetPrefix: "/mayores/",
   images: {
     unoptimized: true,
   },
