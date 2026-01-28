@@ -15,7 +15,7 @@ export default function Home() {
   // --- MOUSE TRACKING ---
   const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       const x = (e.clientX / window.innerWidth) * 100;
       const y = (e.clientY / window.innerHeight) * 100;
       setMousePos({ x, y });
