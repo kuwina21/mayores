@@ -91,6 +91,9 @@ export default function FureverCareDetails() {
   const overviewExitBlur = useTransform(scrollYProgress, [0.75, 0.95], ["0px", "10px"]);
   const overviewExitOpacity = useTransform(scrollYProgress, [0.8, 0.95], [1, 0.3]);
 
+  // Base path for manual assets
+  const BASE_PATH = "/mayores";
+
   // --- DATA ---
   const phases = [
     {
@@ -98,33 +101,32 @@ export default function FureverCareDetails() {
       title: "Consultation",
       tags: ["UI/UX Design", "Stakeholder Meeting"],
       desc: "We met with our advisers to present the initial prototype. This phase was critical for refining the User Interface (UI). Based on their feedback, we integrated new features such as the Inventory Module and streamlined the appointment setting process.",
-      images: ["/Consultation1.jpg", "/Consultation2.jpg"]
+      images: [`${BASE_PATH}/Consultation1.jpg`, `${BASE_PATH}/Consultation2.jpg`]
     },
     {
       id: "02",
       title: "The Defense",
       tags: ["System Architecture", "Panel Approval"],
       desc: "The culmination of our research. We successfully presented the system's architecture and logic to the panel. After demonstrating the backend reliability and real-time features, we secured our official approval.",
-      images: ["/Re Def.jpg"] // Corrected filename case matching directory listing if needed, but original was Re def.jpg. Let's keep original unless broken. Directory listing said "Re Def.jpg". Original code said "/Re def.jpg". Windows is case insensitive locally but linux/vercel is sensitive. "Re Def.jpg" is in directory listing. I should fix this too!
+      images: [`${BASE_PATH}/Re Def.jpg`]
     },
     {
       id: "03",
       title: "Symposium",
       tags: ["Public Demo", "Live Sync"],
       desc: "With the system approved, we showcased the full Furever Care ecosystem at the STI Research Symposium. We demonstrated the real-time sync between the web dashboard and mobile app to students and faculty.",
-      images: ["/Symposium1.jpg", "/Symposium2.jpg"]
+      images: [`${BASE_PATH}/Symposium1.jpg`, `${BASE_PATH}/Symposium2.jpg`]
     },
     {
       id: "04",
       title: "Final Submission",
       tags: ["Deployment", "Manuscript"],
       desc: "Mission Accomplished. The system was fully deployed, the manuscript was bound, and we officially passed the Capstone requirement. The journey from concept to code is complete.",
-      images: ["/final2.jpg", "/final1.jpg"]
+      images: [`${BASE_PATH}/final2.jpg`, `${BASE_PATH}/final1.jpg`]
     }
   ];
 
-  // Base path for manual assets
-  const BASE_PATH = "/mayores";
+
 
   return (
     <main className="bg-[#050505] text-white font-sans selection:bg-blue-500 selection:text-white relative">
@@ -186,7 +188,7 @@ export default function FureverCareDetails() {
                 {/* Right Column (Image) */}
                 <div className="relative order-1 lg:order-2 w-full aspect-square p-2 md:p-4 bg-gray-50 rounded-[30px] md:rounded-[40px]">
                   <div className="w-full h-full relative rounded-[20px] md:rounded-[30px] overflow-hidden shadow-2xl bg-white border border-gray-100">
-                    <Image src="/furevercare.png" alt="Dashboard" fill className="object-cover" />
+                    <Image src={`${BASE_PATH}/furevercare.png`} alt="Dashboard" fill className="object-cover" />
                   </div>
                 </div>
               </motion.div>

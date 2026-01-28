@@ -8,6 +8,7 @@ import Image from "next/image";
 export default function Home() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
+  const BASE_PATH = "/mayores";
 
   // --- ZOOM LOGIC ---
   const backgroundScale = useTransform(scrollYProgress, [0, 0.20], [1, 2.5]);
@@ -42,7 +43,7 @@ export default function Home() {
       tech: "Flutter / Firebase",
       desc: "A Web-Based and Mobile System​ for Pet Health Management and Veterinary Clinic Operations​",
       link: "/project/001",
-      imgSrc: "/furevercare.png",
+      imgSrc: `${BASE_PATH}/furevercare.png`,
       imgPos: "object-center"
     },
     {
@@ -52,7 +53,7 @@ export default function Home() {
       // UPDATED DESCRIPTION BASED ON PDF LORE
       desc: "Rise to Glory: Guide Loyd, a frog ninja, through the deadly Labyrinth of Ascension in this precision 2D platformer.",
       link: "/project/002",
-      imgSrc: "/FALL_L.jpg",
+      imgSrc: `${BASE_PATH}/FALL_L.jpg`,
       imgPos: "object-top"
     },
     {
@@ -74,7 +75,7 @@ export default function Home() {
         className="fixed inset-0 z-[-1] w-full h-screen"
       >
         <Image
-          src="/mayores1.png"
+          src={`${BASE_PATH}/mayores1.png`}
           alt="Background Image"
           fill
           className="object-cover object-[65%_center]"
