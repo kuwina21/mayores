@@ -92,7 +92,7 @@ export default function FureverCareDetails() {
   const overviewExitOpacity = useTransform(scrollYProgress, [0.8, 0.95], [1, 0.3]);
 
   // Base path for manual assets
-  const BASE_PATH = "/mayores";
+  const BASE_PATH = process.env.NODE_ENV === "production" ? "/mayores" : "";
 
   // --- DATA ---
   const phases = [

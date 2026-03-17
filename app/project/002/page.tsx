@@ -17,7 +17,7 @@ export default function ProjectFall() {
     const heroY = useTransform(scrollYProgress, [0, 0.2], ["0%", "20%"]);
 
     // Base path for static assets
-    const BASE_PATH = "/mayores";
+    const BASE_PATH = process.env.NODE_ENV === "production" ? "/mayores" : "";
 
     return (
         <div ref={containerRef} className="bg-[#2eb5e6] text-white min-h-[300vh] font-sans relative overflow-hidden selection:bg-[#92cc4f] selection:text-[#4e342e]">
