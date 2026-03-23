@@ -45,7 +45,7 @@ export default function Home() {
   const projects = [
     {
       id: "001",
-      title: "Capstone Project",
+      title: "Furevercare",
       tech: "Flutter / Firebase",
       desc: "A Web-Based and Mobile System​ for Pet Health Management and Veterinary Clinic Operations​",
       link: "/project/001",
@@ -54,7 +54,7 @@ export default function Home() {
     },
     {
       id: "002",
-      title: "Game Development Project",
+      title: "Fall",
       tech: "Unity / C#",
       desc: "Rise to Glory: Guide Loyd, a frog ninja, through the deadly Labyrinth of Ascension in this precision 2D platformer.",
       link: "/project/002",
@@ -236,6 +236,7 @@ export default function Home() {
               <ul className="space-y-4 font-mono text-zinc-400">
                 <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />Flutter</li>
                 <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />React / Next.js</li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />Tailwind CSS</li>
               </ul>
             </motion.div>
 

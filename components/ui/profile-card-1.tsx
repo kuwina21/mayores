@@ -51,7 +51,7 @@ const ProfileCardDemo = ({
         avatarUrl: avatarUrl || 'https://images.unsplash.com/photo-1544256718-3bcf237f3974?auto=format&fit=crop&q=80&w=200',
         name: 'Shandy Mayores',
         title: '',
-        bio: 'Pressure is privilege',
+        bio: 'Pressure is a privilege',
         socialLinks: [
             { id: 'github', icon: Github, label: 'GitHub', href: githubUrl },
             { id: 'linkedin', icon: Linkedin, label: 'LinkedIn', href: linkedinUrl },
