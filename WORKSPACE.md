@@ -49,3 +49,28 @@ To optimize navigation in large editors, use the workspace configuration file pr
 `kuwina-portfolio.code-workspace`
 - Separates folder roots for `App`, `Components`, and `Assets`.
 - Sets auto-formatting standards for Next.js.
+
+---
+
+## 🎨 Design & Aesthetic Standards
+
+To maintain a consistent, premium, and clinical feel throughout the portfolio, all project pages must adhere to the following:
+
+### 1. Color Palette
+- **Primary Colors**: Black, White, and Blue (e.g., `#000000`, `#FFFFFF`, `text-blue-500`).
+- **Forbidden Colors**: Avoid Green, Red, or other non-brand colors unless absolutely necessary for specific status indicators (standardized to Blue where possible).
+
+### 2. Layout & UI Components
+- **Website/Admin Interfaces**: 
+  - Use sharp, 90-degree corners (`rounded-none`).
+  - No hover animations or scaling on dashboard screenshots.
+  - Display images at their full aspect ratio without cropping.
+- **Mobile Interfaces**:
+  - Use rounded "device" frames (`rounded-[2.5rem]`) to simulate a mobile experience.
+  - Apply subtle entry animations (e.g., `framer-motion` slide/fade).
+- **Sub-Section Labels**: 
+  - Consistent `border-l-4 border-black` style with bold, uppercase text.
+
+### 3. Navigation & 404
+- All 404 pages should use the custom animated `NotFoundPage` component.
+- Ensure text visibility on the 404 page using `mix-blend-difference` against the animated background.

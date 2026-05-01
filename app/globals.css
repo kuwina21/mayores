@@ -132,3 +132,11 @@
     @apply bg-background text-foreground overflow-x-hidden;
   }
 }
+/* GSAP Pinning Utilities */
+pin-spacer {
+  pointer-events: none !important;
+}
+
+canvas {
+  display: block;
+}

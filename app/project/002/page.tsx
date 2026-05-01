@@ -31,7 +31,7 @@ export default function ProjectFall() {
             <nav className="fixed top-0 left-0 w-full z-[60] flex justify-between items-center p-4 md:p-8 pointer-events-none">
                 <Link
                     href="/"
-                    className="pointer-events-auto px-4 py-2 md:px-6 md:py-3 bg-black/80 backdrop-blur-md border border-white/20 rounded-full text-white text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black hover:border-white transition-all flex items-center gap-2 shadow-2xl"
+                    className="pointer-events-auto px-4 py-2 md:px-6 md:py-3 bg-black/80 backdrop-blur-md border border-white/20 text-white text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black hover:border-white transition-all flex items-center gap-2 shadow-2xl"
                 >
                     <span className="text-lg">←</span>
                     <span className="hidden md:inline">Return Home</span>

@@ -258,7 +258,6 @@ export default function Home() {
               <ul className="space-y-3 md:space-y-4 font-mono text-xs md:text-sm text-zinc-400">
                 <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />Firebase</li>
                 <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />MySQL</li>
-                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />SAP HANA</li>
               </ul>
             </motion.div>
 
@@ -275,7 +274,6 @@ export default function Home() {
                 <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />AI & MCP Integration</li>
                 <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />Gemini CLI / Cursor</li>
                 <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />Antigravity Agent</li>
-                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />GitHub / Git</li>
               </ul>
             </motion.div>
           </div>

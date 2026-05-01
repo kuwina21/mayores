@@ -14,13 +14,25 @@ export default function ResumePage() {
                 <div className="flex-1">
                     {/* Header */}
                     <div className="mb-12 mt-4">
-                        <div className="mb-8">
-                            <h2 className="text-lg font-normal">SHANDY MAYORES</h2>
+                        <div className="mb-2">
+                            <h2 className="text-lg font-normal uppercase tracking-widest border-b border-black pb-4">SHANDY MAYORES</h2>
                         </div>
+                        <p className="text-xs opacity-60">Birthdate: January 21, 2004</p>
+                    </div>
+
+                    {/* About Section */}
+                    <div className="mb-12">
+                        <p className="text-sm md:text-base leading-relaxed text-zinc-700">
+                            I am a recent IT graduate with a focus on programming and relational database management. 
+                            I am interested in how AI can improve user experience and I enjoy building applications 
+                            that are supported by organized, scalable data. I am eager to apply my technical skills 
+                            to real-world projects and continue growing as a developer.
+                        </p>
                     </div>
 
                     {/* Experience Section */}
-                    <div className="mb-12 space-y-4">
+                    <div className="mb-12">
+                        <h3 className="text-xs font-bold uppercase tracking-widest mb-6 opacity-40">Education</h3>
                         <div className="flex flex-col md:flex-row md:items-center text-sm md:text-base">
                             <span className="w-32 font-bold">STI College Naga</span>
                             <span className="md:mx-2 text-blue-500">Student</span>
