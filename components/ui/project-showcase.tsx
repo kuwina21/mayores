@@ -4,6 +4,7 @@ import type React from "react"
 
 import { useState, useRef, useEffect } from "react"
 import { ArrowUpRight } from "lucide-react"
+import Link from "next/link"
 
 export interface Project {
     id: string
@@ -102,7 +103,7 @@ export function ProjectShowcase({ projects, className = "max-w-4xl mx-auto px-6 
 
             <div className="space-y-0">
                 {projects.map((project, index) => (
-                    <a
+                    <Link
                         key={project.id}
                         href={project.link}
                         className="group block relative"
@@ -186,7 +187,7 @@ export function ProjectShowcase({ projects, className = "max-w-4xl mx-auto px-6 
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                             </div>
                         </div>
-                    </a>
+                    </Link>
                 ))}
 
                 {/* Bottom border for last item */}
