@@ -32,13 +32,20 @@ export default function Home() {
   }, []);
 
   // --- SPOTLIGHT STYLE ---
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  useEffect(() => {
+    setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
+  }, []);
+
   const chromeStyle = {
-    backgroundImage: `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, #ffffff 0%, #e0e0e0 20%, #71717a 50%, #171717 100%)`,
+    backgroundImage: isTouchDevice 
+      ? `radial-gradient(circle at center, #ffffff 0%, #e0e0e0 40%, #71717a 70%, #171717 100%)`
+      : `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, #ffffff 0%, #e0e0e0 20%, #71717a 50%, #171717 100%)`,
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
     backgroundClip: "text",
     backgroundRepeat: "no-repeat",
-    backgroundSize: "150% 150%",
+    backgroundSize: isTouchDevice ? "100% 100%" : "150% 150%",
     backgroundPosition: "center",
   };
 
@@ -88,7 +95,7 @@ export default function Home() {
           src={`${BASE_PATH}/mayores1.png`}
           alt="Background Image"
           fill
-          className="object-cover object-[65%_center]"
+          className="object-cover object-[center_center] md:object-[65%_center]"
           priority
         />
 
@@ -96,7 +103,7 @@ export default function Home() {
         <div
           className="absolute inset-0 z-10"
           style={{
-            background: "linear-gradient(to right, #000000 0%, #000000 3in, transparent 100%)"
+            background: "linear-gradient(to right, #000000 0%, #000000 min(40vw, 3in), transparent 100%)"
           }}
         />
       </div>
@@ -120,9 +127,9 @@ export default function Home() {
         {/* MIDDLE ROW: KUWINA - MAX LEFT, NO SPACE */}
         <motion.div
           style={{ y: kuwinaY }}
-          className="absolute top-[8%] left-0 z-10 w-full flex justify-start -ml-2 md:-ml-6 overflow-hidden pointer-events-none"
+          className="absolute top-[12%] md:top-[8%] left-0 z-10 w-full flex justify-start -ml-1 sm:-ml-2 md:-ml-6 overflow-hidden pointer-events-none"
         >
-          <h1 className="text-[18vw] font-[900] leading-none tracking-[-0.08em] uppercase select-none text-[#cccccc] opacity-90">
+          <h1 className="text-[22vw] sm:text-[20vw] md:text-[18vw] font-[900] leading-none tracking-[-0.08em] uppercase select-none text-[#cccccc] opacity-90">
             KUWINA
           </h1>
         </motion.div>
@@ -134,23 +141,23 @@ export default function Home() {
           </div>
 
           {/* Arrow Indicator: Anchored to the absolute bottom of the page with increased height */}
-          <motion.div style={{ y: arrowY }} className="absolute left-[37%] md:left-[33%] bottom-0 flex flex-col items-start z-40 pointer-events-none">
+          <motion.div style={{ y: arrowY }} className="absolute left-[15%] sm:left-[25%] md:left-[33%] bottom-0 flex flex-col items-start z-40 pointer-events-none">
             <div className="w-3 h-3 border-t-2 border-l-2 border-white rotate-45 -mt-1.5 opacity-100 -ml-[5.5px]"></div>
-            <div className="h-[25vh] md:h-[45vh] w-[1.5px] bg-white opacity-80"></div>
+            <div className="h-[35vh] sm:h-[40vh] md:h-[45vh] w-[1.5px] bg-white opacity-80"></div>
           </motion.div>
         </div>
 
         {/* THE PERSON IMAGE (mayores2.png) - FLUSH START AT ARROW LINE */}
         <motion.div
           style={{ y: portraitY }}
-          className="absolute left-[37.2%] md:left-[33.2%] right-0 bottom-0 h-[60%] z-20 pointer-events-none"
+          className="absolute left-[15.2%] sm:left-[25.2%] md:left-[33.2%] right-0 bottom-0 h-[50%] sm:h-[55%] md:h-[60%] z-20 pointer-events-none"
         >
           <div className="relative w-full h-full">
             <Image
               src={`${BASE_PATH}/mayores2.png`}
               alt="Portrait"
               fill
-              className="object-cover object-center mix-blend-lighten"
+              className="object-contain object-bottom md:object-cover md:object-center mix-blend-lighten"
               priority
             />
           </div>
@@ -183,7 +190,7 @@ export default function Home() {
 
 
       {/* --- PAGE 4: PROJECTS & ARSENAL COMBINED --- */}
-      <section className="min-h-screen relative z-10 flex flex-col md:flex-row items-stretch px-8 md:px-24 py-20 bg-black/60 backdrop-blur-sm border-t border-zinc-900 gap-12">
+      <section className="min-h-screen relative z-10 flex flex-col md:flex-row items-stretch px-6 sm:px-12 md:px-24 py-12 md:py-20 bg-black/60 backdrop-blur-sm border-t border-zinc-900 gap-8 md:gap-12">
         
         {/* LEFT SIDE: PROJECTS */}
         <div className="w-full md:w-2/3 flex flex-col pt-12">
@@ -209,17 +216,17 @@ export default function Home() {
             <h3 className="text-xl font-black uppercase text-white tracking-widest">Skills</h3>
             <div className="h-1 w-12 bg-blue-600 mt-2 mx-auto md:mx-0"></div>
           </div>
-          <div className="grid grid-cols-1 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-4 md:gap-6">
             
             {/* Skill Group 1 */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="flex flex-col border border-zinc-800 p-8 hover:border-blue-500/50 transition-colors bg-zinc-950/50 group"
+              className="flex flex-col border border-zinc-800 p-6 md:p-8 hover:border-blue-500/50 transition-colors bg-zinc-950/50 group"
             >
-              <h3 className="text-2xl font-bold uppercase tracking-wider mb-6 text-white group-hover:text-blue-400 transition-colors">Game Dev</h3>
-              <ul className="space-y-4 font-mono text-zinc-400">
+              <h3 className="text-xl md:text-2xl font-bold uppercase tracking-wider mb-4 md:mb-6 text-white group-hover:text-blue-400 transition-colors">Game Dev</h3>
+              <ul className="space-y-3 md:space-y-4 font-mono text-xs md:text-sm text-zinc-400">
                 <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />Roblox Studio (Lua)</li>
                 <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />Unity (C#)</li>
               </ul>
@@ -230,10 +237,10 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="flex flex-col border border-zinc-800 p-8 hover:border-blue-500/50 transition-colors bg-zinc-950/50 group"
+              className="flex flex-col border border-zinc-800 p-6 md:p-8 hover:border-blue-500/50 transition-colors bg-zinc-950/50 group"
             >
-              <h3 className="text-2xl font-bold uppercase tracking-wider mb-6 text-white group-hover:text-blue-400 transition-colors">App Dev</h3>
-              <ul className="space-y-4 font-mono text-zinc-400">
+              <h3 className="text-xl md:text-2xl font-bold uppercase tracking-wider mb-4 md:mb-6 text-white group-hover:text-blue-400 transition-colors">App Dev</h3>
+              <ul className="space-y-3 md:space-y-4 font-mono text-xs md:text-sm text-zinc-400">
                 <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />Flutter</li>
                 <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />React / Next.js</li>
                 <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />Tailwind CSS</li>
@@ -245,10 +252,10 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-col border border-zinc-800 p-8 hover:border-blue-500/50 transition-colors bg-zinc-950/50 group"
+              className="flex flex-col border border-zinc-800 p-6 md:p-8 hover:border-blue-500/50 transition-colors bg-zinc-950/50 group"
             >
-              <h3 className="text-2xl font-bold uppercase tracking-wider mb-6 text-white group-hover:text-blue-400 transition-colors">Backend & DB</h3>
-              <ul className="space-y-4 font-mono text-zinc-400">
+              <h3 className="text-xl md:text-2xl font-bold uppercase tracking-wider mb-4 md:mb-6 text-white group-hover:text-blue-400 transition-colors">Backend & DB</h3>
+              <ul className="space-y-3 md:space-y-4 font-mono text-xs md:text-sm text-zinc-400">
                 <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />Firebase</li>
                 <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />MySQL</li>
                 <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />SAP HANA</li>
@@ -260,10 +267,10 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-col border border-zinc-800 p-8 hover:border-blue-500/50 transition-colors bg-zinc-950/50 group"
+              className="flex flex-col border border-zinc-800 p-6 md:p-8 hover:border-blue-500/50 transition-colors bg-zinc-950/50 group"
             >
-              <h3 className="text-2xl font-bold uppercase tracking-wider mb-6 text-white group-hover:text-blue-400 transition-colors">Design & AI Tools</h3>
-              <ul className="space-y-4 font-mono text-zinc-400">
+              <h3 className="text-xl md:text-2xl font-bold uppercase tracking-wider mb-4 md:mb-6 text-white group-hover:text-blue-400 transition-colors">Design & AI Tools</h3>
+              <ul className="space-y-3 md:space-y-4 font-mono text-xs md:text-sm text-zinc-400">
                 <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />Figma / Canva</li>
                 <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />AI & MCP Integration</li>
                 <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />Gemini CLI / Cursor</li>
@@ -276,9 +283,9 @@ export default function Home() {
       </section>
 
       {/* --- PAGE 6: FINALE --- */}
-      <section className="relative z-20 min-h-[80vh] flex flex-col items-center justify-center px-8 py-24">
-        <div className="text-center mb-12">
-          <h2 className="text-5xl md:text-[8vw] font-black tracking-tighter leading-none italic uppercase drop-shadow-lg text-white">
+      <section className="relative z-20 min-h-[80vh] flex flex-col items-center justify-center px-6 py-16 md:py-24">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-4xl sm:text-5xl md:text-[8vw] font-black tracking-tighter leading-none italic uppercase drop-shadow-lg text-white">
             Contact
           </h2>
         </div>

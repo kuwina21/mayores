@@ -123,7 +123,7 @@ export function ProjectShowcase({ projects, className = "max-w-4xl mx-auto px-6 
                                 <div className="flex-1 min-w-0">
                                     {/* Title with animated underline */}
                                     <div className="inline-flex items-center gap-4">
-                                        <h3 className="text-white font-black text-4xl md:text-5xl uppercase tracking-tighter leading-none italic">
+                                        <h3 className="text-white font-black text-2xl sm:text-3xl md:text-5xl uppercase tracking-tighter leading-none italic">
                                             <span className="relative">
                                                 {project.title}
                                                 {/* Animated underline */}
@@ -153,7 +153,7 @@ export function ProjectShowcase({ projects, className = "max-w-4xl mx-auto px-6 
                                     {/* Description with fade effect */}
                                     <p
                                         className={`
-                      text-gray-400 text-lg mt-4 leading-relaxed max-w-xl
+                      text-gray-400 text-sm md:text-lg mt-2 md:mt-4 leading-relaxed max-w-xl
                       transition-all duration-300 ease-out
                       ${hoveredIndex === index ? "text-white/90" : "text-gray-500"}
                     `}
@@ -166,7 +166,7 @@ export function ProjectShowcase({ projects, className = "max-w-4xl mx-auto px-6 
                                 <div className="mt-4 md:mt-0 flex shrink-0">
                                     <span
                                         className={`
-                        text-xs font-mono tabular-nums px-4 py-2 border rounded-full uppercase tracking-widest
+                        text-[10px] md:text-xs font-mono tabular-nums px-3 md:px-4 py-1.5 md:py-2 border rounded-full uppercase tracking-widest
                         transition-all duration-300 ease-out
                         ${hoveredIndex === index ? "text-white border-blue-500 bg-blue-500/10" : "text-white/40 border-white/20"}
                     `}
@@ -174,6 +174,16 @@ export function ProjectShowcase({ projects, className = "max-w-4xl mx-auto px-6 
                                         {project.tech}
                                     </span>
                                 </div>
+                            </div>
+
+                            {/* Mobile Image: Visible only on small screens */}
+                            <div className="mt-6 md:hidden overflow-hidden rounded-lg border border-white/10 aspect-video relative">
+                                <img
+                                    src={project.imgSrc || "/placeholder.svg"}
+                                    alt={project.title}
+                                    className={`w-full h-full object-cover ${project.imgPos || "object-center"}`}
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                             </div>
                         </div>
                     </a>
