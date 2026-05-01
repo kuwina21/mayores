@@ -46,7 +46,7 @@ export default function ResumePage() {
             <div className="flex w-full md:w-1/2 h-[50vh] md:h-auto relative bg-[#0a0a0a] overflow-hidden items-center justify-center">
                 <div className="relative w-full h-full">
                     <Image
-                        src={`${BASE_PATH}/mayores3.jpg`}
+                        src="/mayores3.jpg"
                         alt="Shandy Mayores"
                         fill
                         className="object-cover object-[center_80%]"

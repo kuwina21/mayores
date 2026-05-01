@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const BASE_PATH = process.env.NODE_ENV === 'production' ? '/kuwina-portfolio' : '';
+const BASE_PATH = process.env.NODE_ENV === 'production' ? '/mayores' : '';
 
 
 export default function FureverCareDetails() {
