@@ -84,9 +84,7 @@ export default function ProjectFall() {
                             he must challenge the deadly <strong>Labyrinth of Ascension</strong> to prove his worth
                             and regain his honor.
                         </p>
-                        <p className="mt-6 text-base opacity-80 italic">
-                            Design Pillars: Precision (Celeste), Challenge (Super Meat Boy), and Rhythm (Rayman Legends).
-                        </p>
+
                     </div>
 
                     <div className="flex justify-center gap-3 flex-wrap">
@@ -107,9 +105,7 @@ export default function ProjectFall() {
                             <Image src={`${BASE_PATH}/MainMenu.png`} alt="Main Menu UI" fill className="object-cover" />
                         </div>
                     </div>
-                    <p className="text-center text-white/60 font-mono text-xs mt-6 uppercase tracking-widest">
-                        Retro-Inspired User Interface
-                    </p>
+
                 </div>
             </section>
 
@@ -302,52 +298,27 @@ export default function ProjectFall() {
                     <div className="flex flex-col md:flex-row items-end justify-between gap-6 mb-12">
                         <div>
                             <h3 className="text-4xl font-black uppercase tracking-tighter mb-2">Game Design Document</h3>
-                            <p className="text-zinc-600 font-medium">Read the full technical specification and mechanics breakdown.</p>
+
                         </div>
-                        <a href={`${BASE_PATH}/GameDV.pdf`} download className="bg-black text-white px-8 py-3 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-[#92cc4f] hover:text-black transition-colors shadow-xl">
-                            Download PDF ↓
-                        </a>
+
                     </div>
 
                     <div className="w-full h-[80vh] bg-white rounded-xl overflow-hidden shadow-2xl border-4 border-white">
                         <object data={`${BASE_PATH}/GameDV.pdf`} type="application/pdf" className="w-full h-full">
                             <div className="flex items-center justify-center h-full flex-col gap-4 bg-zinc-100">
                                 <p className="text-zinc-500">Your browser does not support inline PDF viewing.</p>
-                                <a href={`${BASE_PATH}/GameDV.pdf`} className="px-6 py-3 bg-black text-white rounded-full text-sm font-bold uppercase">Download the PDF</a>
+
                             </div>
                         </object>
                     </div>
                 </div>
-            </section>
-
-            {/* --- TEAM & CREDITS --- */}
-            <section className="relative z-30 bg-[#5d4037] text-[#e8dacb] py-32 px-6 border-t-[8px] border-[#432e29]">
+            </section>            {/* --- CONTRIBUTION & RESOURCES --- */}
+            <section className="relative z-30 bg-[#5d4037] text-[#e8dacb] py-24 px-6 border-t-[8px] border-[#432e29]">
                 <div className="max-w-4xl mx-auto">
-                    <div className="text-center mb-16">
-                        <div className="w-24 h-24 mx-auto rounded-full border-4 border-[#92cc4f] mb-8 overflow-hidden relative bg-white shadow-lg">
-                            <Image src={`${BASE_PATH}/FALL_L.jpg`} fill className="object-cover object-top" alt="Logo" />
-                        </div>
-                        <h3 className="text-2xl font-black uppercase mb-2 tracking-widest text-[#92cc4f]">FourHead Studio</h3>
-                        <p className="text-sm font-mono opacity-60 uppercase">STI College Naga — SY2526</p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left max-w-2xl mx-auto bg-[#4e342e] p-10 rounded-2xl shadow-inner border-2 border-[#6d4c41] mb-12">
-                        <div>
-                            <span className="block text-[10px] uppercase opacity-50 font-bold tracking-widest mb-1">Group Leader / Programmer</span>
-                            <div className="text-xl font-bold text-white">Basil Santos</div>
-                        </div>
-                        <div>
-                            <span className="block text-[10px] uppercase opacity-50 font-bold tracking-widest mb-1">Lead Developer / Programmer</span>
-                            <div className="text-xl font-bold text-[#92cc4f]">Shandy Mayores</div>
-                        </div>
-                        <div>
-                            <span className="block text-[10px] uppercase opacity-50 font-bold tracking-widest mb-1">Documentation</span>
-                            <div className="text-xl font-bold text-white">Ben Vergara</div>
-                        </div>
-                        <div>
-                            <span className="block text-[10px] uppercase opacity-50 font-bold tracking-widest mb-1">Documentation</span>
-                            <div className="text-xl font-bold text-white">Jon Jon Gomez</div>
-                        </div>
+                    <div className="text-center mb-16 max-w-2xl mx-auto">
+                        <p className="text-xl md:text-2xl font-bold text-[#92cc4f] leading-relaxed italic">
+                            "Enhanced a 2D game FALL: Rise to Glory. Building custom adventure levels and modifying existing mechanics to create a more challenging user experience."
+                        </p>
                     </div>
 
                     <div className="border-t border-[#6d4c41] pt-12 text-center max-w-lg mx-auto">
@@ -366,10 +337,6 @@ export default function ProjectFall() {
                                 <a href="https://github.com/chrisgodfrey/Robobunny" target="_blank" className="hover:text-white transition-colors underline decoration-[#92cc4f]">
                                     Robobunny by Chris Godfrey
                                 </a>
-                            </div>
-                            <div className="pt-8">
-                                Submitted to: Everild Gerd R. Pablo, MBA <br />
-                                Subject: Computer Graphics Programming & Game Development
                             </div>
                         </div>
                     </div>

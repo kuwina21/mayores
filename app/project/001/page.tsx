@@ -195,13 +195,7 @@ export default function FureverCareDetails() {
             <div>
               <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight mb-2">Project Manuscript</h2>
             </div>
-            <a
-              href={`${BASE_PATH}/furevercare_manuscript.pdf`}
-              download
-              className="w-full md:w-auto text-center px-6 py-3 bg-black text-white text-xs font-bold uppercase tracking-widest hover:bg-blue-600 transition-colors"
-            >
-              Download PDF ↓
-            </a>
+
           </div>
 
           {/* PDF VIEWER CONTAINER */}
@@ -214,9 +208,7 @@ export default function FureverCareDetails() {
               {/* Fallback for mobile (since many mobile browsers don't support inline PDF) */}
               <div className="flex flex-col items-center justify-center h-full text-center p-8 md:p-12">
                 <p className="text-gray-500 mb-4 text-lg">Your device might not support inline PDF viewing.</p>
-                <a href={`${BASE_PATH}/furevercare_manuscript.pdf`} className="px-6 py-3 bg-blue-600 text-white font-bold shadow-lg">
-                  Download Manuscript
-                </a>
+
               </div>
             </object>
           </div>
