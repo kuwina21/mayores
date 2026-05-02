@@ -92,7 +92,7 @@ export default function Home() {
       {/* --- FIXED BACKGROUND LAYER --- */}
       <div className="fixed inset-0 z-[-1] w-full h-screen">
         <Image
-          src="/mayores1.png"
+          src={`${BASE_PATH}/mayores1.png`}
           alt="Background Image"
           fill
           className="object-cover object-[center_center] md:object-[65%_center]"
@@ -154,7 +154,7 @@ export default function Home() {
         >
           <div className="relative w-full h-full">
             <Image
-              src="/mayores2.png"
+              src={`${BASE_PATH}/mayores2.png`}
               alt="Portrait"
               fill
               className="object-contain object-bottom md:object-cover md:object-center mix-blend-lighten"
@@ -288,7 +288,7 @@ export default function Home() {
           </h2>
         </div>
         <ProfileCard 
-          avatarUrl="/pfp.jpg" 
+          avatarUrl={`${BASE_PATH}/pfp.jpg`} 
           githubUrl="https://github.com/kuwina21" 
           instagramUrl="https://www.instagram.com/kuwina__/" 
           linkedinUrl="https://www.linkedin.com/in/shandy-mayores-34a023388/" 
