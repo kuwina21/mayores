@@ -1,12 +1,17 @@
 import type { NextConfig } from "next";
 
+const isGitHubPages = process.env.NODE_ENV === "production" && !process.env.VERCEL;
+const basePath = isGitHubPages ? "/mayores" : "";
+
 const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
-  // IMPORTANT: Only set basePath for GitHub Pages subdirectory deployments, not Vercel
-  basePath: (process.env.NODE_ENV === "production" && !process.env.VERCEL) ? "/mayores" : undefined,
+  basePath: basePath || undefined,
   images: {
     unoptimized: true,
+  },
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
   },
 };
 

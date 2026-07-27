@@ -11,7 +11,7 @@ import ProfileCard from "@/components/ui/profile-card-1";
 export default function Home() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
-  const BASE_PATH = (process.env.NODE_ENV === "production" && !process.env.VERCEL) ? "/mayores" : "";
+  const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
   // --- PARALLAX LOGIC ---
   // Background stays static (removed zoom)

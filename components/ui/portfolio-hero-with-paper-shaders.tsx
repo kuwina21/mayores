@@ -5,7 +5,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 
 export default function ResumePage() {
-    const BASE_PATH = process.env.NODE_ENV === "production" ? "/mayores" : "";
+    const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
     return (
         <div className="relative min-h-screen flex flex-col md:flex-row">

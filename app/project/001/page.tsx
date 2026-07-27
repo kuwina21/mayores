@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-const BASE_PATH = (process.env.NODE_ENV === 'production' && !process.env.VERCEL) ? '/mayores' : '';
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 export default function FureverCareDetails() {
   return (
