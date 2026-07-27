@@ -21,6 +21,10 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Kuwina Portfolio | Shandy Mayores",
   description: "Portfolio of Shandy Mayores - Game Developer, App Developer, and UI/UX Enthusiast.",
+  icons: {
+    icon: process.env.NODE_ENV === "production" ? "/mayores/logo.png" : "/logo.png",
+    apple: process.env.NODE_ENV === "production" ? "/mayores/logo.png" : "/logo.png",
+  },
 };
 
 export default function RootLayout({
