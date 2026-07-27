@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boxing Match: Curly vs Muscle</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-wrapper">
+        <div class="game-container">
+            <!-- BATTLEFIELD STAGE (CANVAS & OVERLAYS) -->
+            <div class="battlefield-stage">
+                <!-- Health Bar Interface -->
+                <div class="hud">
+                    <!-- Player Health (Left) -->
+                    <div class="player-hud">
+                        <div class="name-tag">Gerald Bernisca</div>
+                        <div class="health-bar-bg">
+                            <div id="playerHealth" class="health-bar"></div>
+                        </div>
+                    </div>
+
+                    <!-- Timer / VS -->
+                    <div class="timer">
+                        <div id="timer">60</div>
+                    </div>
+
+                    <!-- Enemy Health (Right) -->
+                    <div class="enemy-hud">
+                        <div class="name-tag">Owen (Player 2)</div>
+                        <div class="health-bar-bg">
+                            <div id="enemyHealth" class="health-bar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Menu -->
+                <div id="mainMenu" class="menu-overlay">
+                    <h1>Gerald VS Owen</h1>
+                    <p>Project: Boxing Match</p>
+                    <button id="startBtn">FIGHT!</button>
+                    <button id="changeCharBtn" style="margin-top: 10px; background: #555;">Change Characters</button>
+                </div>
+
+                <!-- Character Selection Screen -->
+                <div id="characterSelection" style="display: none;">
+                    <h2>Select Your Fighter</h2>
+                    <div class="selection-container">
+                        <!-- Player 1 Selection -->
+                        <div class="p1-select">
+                            <h3>Player 1</h3>
+                            <div class="char-preview" id="p1Preview" style="background: #3498db;">Gerald</div>
+                            <div class="char-buttons">
+                                <button class="char-btn" onclick="selectChar(1, 'curly')">Gerald</button>
+                                <button class="char-btn" onclick="selectChar(1, 'muscle')">Owen</button>
+                                <button class="char-btn" onclick="selectChar(1, 'lolo_tatay')">Lolo Tatay</button>
+                                <button class="char-btn" onclick="selectChar(1, 'allan')">Allan</button>
+                                <button class="char-btn" style="background:#556B2F" onclick="selectChar(1, 'ben_granada')">Ben</button>
+                                <button class="char-btn" style="background:#2c3e50; border: 2px solid white" onclick="selectChar(1, 'femboy')">Femboy</button>
+                                <button class="char-btn" style="background:#f1c40f; color:black" onclick="selectChar(1, 'kokoy')">Kokoy</button>
+                            </div>
+                        </div>
+
+                        <!-- Player 2 Selection -->
+                        <div class="p2-select">
+                            <h3>Player 2</h3>
+                            <div class="char-preview" id="p2Preview" style="background: #e74c3c;">Owen</div>
+                            <div class="char-buttons">
+                                <button class="char-btn" onclick="selectChar(2, 'curly')">Gerald</button>
+                                <button class="char-btn" onclick="selectChar(2, 'muscle')">Owen</button>
+                                <button class="char-btn" onclick="selectChar(2, 'lolo_tatay')">Lolo Tatay</button>
+                                <button class="char-btn" onclick="selectChar(2, 'allan')">Allan</button>
+                                <button class="char-btn" style="background:#556B2F" onclick="selectChar(2, 'ben_granada')">Ben</button>
+                                <button class="char-btn" style="background:#2c3e50; border: 2px solid white" onclick="selectChar(2, 'femboy')">Femboy</button>
+                                <button class="char-btn" style="background:#f1c40f; color:black" onclick="selectChar(2, 'kokoy')">Kokoy</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="confirmBtn">START MATCH</button>
+                </div>
+
+                <div id="displayText" style="display: none;"></div>
+                <canvas id="gameCanvas" width="1024" height="576"></canvas>
+            </div>
+
+            <!-- CONTROLS PANEL (POSITIONED BELOW BATTLEFIELD) -->
+            <div id="controls-ui">
+                <!-- PLAYER 1 CONTROLS (LEFT) -->
+                <div class="player-controls p1-controls">
+                    <div class="p-tag">P1 CONTROLS</div>
+                    <div class="btn-row">
+                        <button id="p1Left" class="ctrl-btn">◄</button>
+                        <button id="p1Right" class="ctrl-btn">►</button>
+                        <button id="p1Jump" class="ctrl-btn">▲</button>
+                    </div>
+                    <div class="btn-row">
+                        <button id="p1Punch" class="ctrl-btn icon-btn">🥊<span class="btn-label">ATK</span></button>
+                        <button id="p1Block" class="ctrl-btn icon-btn">🛡️<span class="btn-label">BLK</span></button>
+                    </div>
+                </div>
+
+                <!-- PLAYER 2 CONTROLS (RIGHT) -->
+                <div class="player-controls p2-controls">
+                    <div class="p-tag">P2 CONTROLS</div>
+                    <div class="btn-row">
+                        <button id="p2Left" class="ctrl-btn">◄</button>
+                        <button id="p2Right" class="ctrl-btn">►</button>
+                        <button id="p2Jump" class="ctrl-btn">▲</button>
+                    </div>
+                    <div class="btn-row">
+                        <button id="p2Punch" class="ctrl-btn icon-btn">🥊<span class="btn-label">ATK</span></button>
+                        <button id="p2Block" class="ctrl-btn icon-btn">🛡️<span class="btn-label">BLK</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

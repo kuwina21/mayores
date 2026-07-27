@@ -87,6 +87,23 @@ export default function Home() {
     }
   ];
 
+  const miniProjects = [
+    {
+      id: "m01",
+      title: "Boxing Match: Gerald vs Owen",
+      tech: "HTML5 Canvas / JavaScript",
+      desc: "Interactive 2D web boxing arcade game featuring custom character selection, physics, and combat mechanics.",
+      link: "/mini-project/001"
+    },
+    {
+      id: "m02",
+      title: "Scroll Parallax Album",
+      tech: "Next.js / Framer Motion / Parallax",
+      desc: "Editorial photo album experiment featuring dynamic multi-phase scroll parallax, fluid visual transitions, and interactive lightbox gallery.",
+      link: "/mini-project/002"
+    }
+  ];
+
   return (
     <div className="bg-transparent text-white selection:bg-zinc-800 font-sans relative">
 
@@ -204,6 +221,54 @@ export default function Home() {
             {/* Inside sidebar we can pass custom classes safely now */}
             <ProjectShowcase projects={projects} className="max-w-none px-0 py-0" />
           </div>
+
+          {/* MINI PROJECTS SUBSECTION */}
+          <div className="mt-14 pt-10 border-t border-zinc-900">
+            <div className="mb-6 text-center md:text-left">
+              <motion.h3
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="text-xl sm:text-2xl font-flux font-[900] leading-none tracking-[-0.08em] uppercase text-[#cccccc] opacity-90"
+              >
+                Mini Projects & Experiments
+              </motion.h3>
+              <p className="text-xs font-mono text-zinc-500 mt-2">
+                Utility scripts, automated pipelines, and prototype experiments.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {miniProjects.map((mini, idx) => (
+                <motion.div
+                  key={mini.id || idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: idx * 0.08 }}
+                >
+                  <Link
+                    href={mini.link}
+                    className="flex flex-col justify-between border border-zinc-800/80 p-5 bg-zinc-950/60 hover:border-white/60 hover:bg-zinc-900/80 transition-all duration-300 group min-h-[130px] h-full"
+                  >
+                    <div>
+                      <div className="flex items-start justify-between gap-2 mb-2">
+                        <h4 className="text-sm font-bold font-mono text-zinc-200 group-hover:text-white transition-colors flex items-center gap-1.5">
+                          {mini.title}
+                          <span className="text-zinc-500 group-hover:text-white group-hover:translate-x-0.5 transition-all text-xs">→</span>
+                        </h4>
+                        <span className="text-[10px] font-mono text-zinc-400 border border-zinc-800 bg-zinc-900/80 px-2 py-0.5 shrink-0">
+                          {mini.tech}
+                        </span>
+                      </div>
+                      <p className="text-xs font-mono text-zinc-400 leading-relaxed">
+                        {mini.desc}
+                      </p>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* RIGHT SIDE: SKILLS / ARSENAL */}
@@ -217,18 +282,67 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="flex flex-col border border-zinc-800 p-6 md:p-8 hover:border-white/40 transition-colors bg-zinc-950/50 group"
+              className="flex flex-col border border-zinc-800 p-6 md:p-8 hover:border-white/40 transition-colors bg-zinc-950/50 group space-y-6 max-h-[600px] overflow-y-auto scrollbar-thin scrollbar-thumb-zinc-700"
             >
-              <ul className="space-y-3 font-mono text-xs md:text-sm text-zinc-400 opacity-90">
-                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-white/80 rounded-none shrink-0" />Web App Development (Laravel, React, PHP)</li>
-                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-white/80 rounded-none shrink-0" />Mobile App Development (Flutter)</li>
-                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-white/80 rounded-none shrink-0" />Automation (n8n Workflow Automation)</li>
-                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-white/80 rounded-none shrink-0" />UI/UX Design & Basic Web Development</li>
-                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-white/80 rounded-none shrink-0" />Software & Design Tools (Figma, Canva)</li>
-                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-white/80 rounded-none shrink-0" />MS Office Suite (Excel, Word, PowerPoint)</li>
-                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-white/80 rounded-none shrink-0" />Databases (MySQL, Firebase)</li>
-                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-white/80 rounded-none shrink-0" />Game Development (Roblox Studio / Lua, Unity / C#)</li>
-              </ul>
+              {/* Category: Frontend & Mobile */}
+              <div>
+                <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400 mb-3 border-b border-zinc-800 pb-1">Frontend & Mobile</h4>
+                <div className="flex flex-wrap gap-1.5 font-mono text-[11px] text-zinc-300">
+                  {["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Vue.js", "Svelte", "Tailwind CSS", "Bootstrap", "Material UI", "Ant Design", "Chakra UI", "Shadcn UI", "Radix UI", "Lucide React", "Framer", "Flutter", "WordPress", "Progressive Web App (PWA)", "Expo EAS", "Jetpack"].map((skill) => (
+                    <span key={skill} className="px-2 py-0.5 border border-zinc-800 bg-zinc-900/60 hover:border-zinc-500 transition-colors">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Category: Backend & APIs */}
+              <div>
+                <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400 mb-3 border-b border-zinc-800 pb-1">Backend & APIs</h4>
+                <div className="flex flex-wrap gap-1.5 font-mono text-[11px] text-zinc-300">
+                  {["Node.js", "Python", "PHP", "Laravel", "Express", "FastAPI", "Kotlin", "C++", "Streamlit", "Zod", "Zustand", "TanStack", "better-auth", "JWT", "CORS", "Pydantic", "PayMongo", "Stripe", "PayPal", "Resend"].map((skill) => (
+                    <span key={skill} className="px-2 py-0.5 border border-zinc-800 bg-zinc-900/60 hover:border-zinc-500 transition-colors">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Category: Databases & Cloud */}
+              <div>
+                <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400 mb-3 border-b border-zinc-800 pb-1">Databases & Cloud</h4>
+                <div className="flex flex-wrap gap-1.5 font-mono text-[11px] text-zinc-300">
+                  {["Supabase", "Supabase Auth", "Firebase Auth", "SQLite", "MySQL", "PostgreSQL", "MongoDB", "BigQuery", "Axiom", "Upstash Redis", "Supabase Cloud", "Firebase Cloud", "Supabase Storage", "XAMPP/WAMP", "Laragon", "AWS", "Oracle Cloud", "AWS Networking", "Azure Networking", "Aviatrix", "Aviatrix Multicloud"].map((skill) => (
+                    <span key={skill} className="px-2 py-0.5 border border-zinc-800 bg-zinc-900/60 hover:border-zinc-500 transition-colors">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Category: AI & Machine Learning */}
+              <div>
+                <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400 mb-3 border-b border-zinc-800 pb-1">AI, ML & Computer Vision</h4>
+                <div className="flex flex-wrap gap-1.5 font-mono text-[11px] text-zinc-300">
+                  {["OpenAI API", "Google Gemini", "Claude", "Copilot", "Stitch AI", "Oracle Generative AI", "Gen AI", "Torch", "Tensors", "TensorFlow", "Caffe2", "PyTorch", "Theano", "Pandas", "Pinecone", "InsightFace", "ArcFace embeddings", "OpenCV", "ONNX Runtime", "Google ML Kit Text Recognition", "YOLO", "RetinaFace detection"].map((skill) => (
+                    <span key={skill} className="px-2 py-0.5 border border-zinc-800 bg-zinc-900/60 hover:border-zinc-500 transition-colors">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Category: DevOps, Security & Tooling */}
+              <div>
+                <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400 mb-3 border-b border-zinc-800 pb-1">DevOps, Security & Tooling</h4>
+                <div className="flex flex-wrap gap-1.5 font-mono text-[11px] text-zinc-300">
+                  {["Docker", "GitHub Actions", "GitLab CLI", "Vercel", "ISO 27001", "AWS IAM", "bcrypt", "HSTS", "CSP", "Prettier", "Husky", "Playwright"].map((skill) => (
+                    <span key={skill} className="px-2 py-0.5 border border-zinc-800 bg-zinc-900/60 hover:border-zinc-500 transition-colors">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </motion.div>
           </div>
 

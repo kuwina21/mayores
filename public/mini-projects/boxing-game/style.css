@@ -1,0 +1,417 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Bangers', cursive;
+}
+
+body {
+    background-color: #0d0d0e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.game-wrapper {
+    width: 100vw;
+    max-width: 1024px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    background: #000;
+}
+
+.battlefield-stage {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1024 / 576;
+    overflow: hidden;
+    background: #000;
+}
+
+#gameCanvas {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.hud {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 20px;
+}
+
+.player-hud,
+.enemy-hud {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.player-hud {
+    align-items: flex-start;
+}
+
+.enemy-hud {
+    align-items: flex-end;
+}
+
+.name-tag {
+    color: white;
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.health-bar-bg {
+    background-color: #333;
+    width: 100%;
+    height: 30px;
+    border: 3px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.health-bar {
+    height: 100%;
+    transition: width 0.3s;
+    position: relative;
+}
+
+#playerHealth {
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    /* Gerald Blue */
+    width: 100%;
+}
+
+#enemyHealth {
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
+    /* Owen Red */
+    width: 100%;
+    float: right;
+}
+
+.timer {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    background: #111;
+    border: 3px solid #f1c40f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f1c40f;
+    font-size: 30px;
+    margin: 0 20px;
+    box-shadow: 0 0 15px rgba(241, 196, 15, 0.4);
+}
+
+/* Menu Styles */
+.menu-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.game-title {
+    font-size: 80px;
+    color: #ecf0f1;
+    text-transform: uppercase;
+    text-shadow: 4px 4px 0 #2c3e50;
+    margin-bottom: 10px;
+}
+
+.vs {
+    color: #e74c3c;
+    font-style: italic;
+}
+
+.subtitle {
+    font-size: 24px;
+    color: #bdc3c7;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+}
+
+button {
+    font-family: 'Bangers', cursive;
+    font-size: 40px;
+    padding: 15px 60px;
+    background: #f1c40f;
+    border: none;
+    cursor: pointer;
+    color: #2c3e50;
+    border-bottom: 6px solid #f39c12;
+    transition: background 0.15s ease, opacity 0.15s ease;
+}
+
+button:active {
+    opacity: 0.85;
+}
+
+button:hover {
+    background: #f39c12;
+    color: white;
+}
+
+#displayText {
+    position: absolute;
+    color: white;
+    width: 100%;
+    top: 40%;
+    transform: translateY(-50%);
+    text-align: center;
+    font-size: 80px;
+    text-shadow: 4px 4px 0 #000;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+/* ... previous styles ... */
+
+#characterSelection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 20;
+}
+
+.selection-container {
+    display: flex;
+    gap: 100px;
+    margin-bottom: 30px;
+}
+
+.p1-select,
+.p2-select {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.char-preview {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border: 3px solid white;
+}
+
+.char-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.char-btn {
+    padding: 10px;
+    cursor: pointer;
+    background: #444;
+    color: white;
+    border: none;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 10px;
+}
+
+.char-btn:hover {
+    background: #666;
+}
+
+#confirmBtn {
+    font-size: 24px;
+    padding: 15px 40px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: 'Press Start 2P', monospace;
+    margin-top: 20px;
+}
+
+/* Onscreen Controls: Hidden on Desktop, Visible below Battlefield on Mobile */
+#controls-ui {
+    display: none !important;
+}
+
+@media (max-width: 768px), (pointer: coarse) {
+    #controls-ui {
+        position: relative !important;
+        width: 100%;
+        display: flex !important;
+        justify-content: space-between;
+        padding: 8px 10px;
+        background: #111113;
+        border-top: 2px solid #27272a;
+        pointer-events: auto;
+        z-index: 50;
+    }
+}
+
+.player-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    pointer-events: auto;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 6px 8px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+}
+
+.p-tag {
+    font-size: 10px;
+    font-weight: bold;
+    font-family: monospace;
+    color: #f1c40f;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.btn-row {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+}
+
+.ctrl-btn {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    color: white;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.btn-label {
+    font-size: 7px;
+    font-weight: bold;
+    font-family: monospace;
+    margin-top: 1px;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.key-hint {
+    position: absolute;
+    bottom: -16px;
+    background: rgba(0, 0, 0, 0.85);
+    color: #f1c40f;
+    border: 1px solid #f1c40f;
+    font-size: 8px;
+    padding: 1px 4px;
+    border-radius: 3px;
+    white-space: nowrap;
+    font-family: monospace;
+    pointer-events: none;
+}
+
+@media (max-width: 640px) {
+    .key-hint {
+        display: none;
+    }
+    
+    .hud {
+        padding: 8px 12px;
+    }
+
+    .name-tag {
+        font-size: 14px;
+    }
+
+    .health-bar-bg {
+        height: 18px;
+    }
+
+    .timer {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+        margin: 0 8px;
+    }
+
+    .selection-container {
+        gap: 20px;
+        flex-direction: column;
+    }
+}
+
+.icon-btn {
+    font-size: 18px;
+}
+
+.ctrl-btn:active,
+.ctrl-btn.active {
+    background: rgba(255, 255, 255, 0.5);
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+#btnBlock {
+    border-color: #3498db;
+    background: rgba(52, 152, 219, 0.4);
+}
+
+#btnPunch {
+    border-color: #e74c3c;
+    background: rgba(231, 76, 60, 0.5);
+    width: 66px;
+    height: 66px;
+}

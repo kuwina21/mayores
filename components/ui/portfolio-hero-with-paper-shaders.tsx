@@ -26,10 +26,7 @@ export default function ResumePage() {
                     {/* About Section */}
                     <div className="mb-12">
                         <p className="text-sm md:text-base leading-relaxed text-zinc-700">
-                            I am a recent IT graduate with a focus on programming and relational database management. 
-                            I am interested in how AI can improve user experience and I enjoy building applications 
-                            that are supported by organized, scalable data. I am eager to apply my technical skills 
-                            to real-world projects and continue growing as a developer.
+                            I build applications that solve data problems &mdash; turning disorganized information into scalable, well-structured systems that support better user experiences. With a background in programming and relational database management, plus an eye toward how AI can enhance usability, I offer practical, real-world solutions for teams that need their software and data working together seamlessly.
                         </p>
                     </div>
 
