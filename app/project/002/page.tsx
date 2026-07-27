@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { SkeletonImage } from "@/components/ui/skeleton-image";
 
 export default function ProjectFall() {
     const containerRef = useRef(null);
@@ -39,12 +40,13 @@ export default function ProjectFall() {
                     style={{ scale: heroScale, y: heroY }}
                     className="absolute inset-0 z-0 opacity-70"
                 >
-                    <Image
+                    <SkeletonImage
                         src={`${BASE_PATH}/FALL_L.jpg`}
                         alt="Fall: Rise to Glory Landscape"
                         fill
                         className="object-cover object-top"
                         priority
+                        showText
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                 </motion.div>

@@ -2,6 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { SkeletonImage } from '@/components/ui/skeleton-image';
 import { motion } from 'framer-motion';
 
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
@@ -74,10 +75,13 @@ export default function FureverCareDetails() {
 
             {/* Right Column (Image) */}
             <div className="relative w-full bg-zinc-900 border border-zinc-800">
-              <img 
+              <SkeletonImage 
                 src={`${BASE_PATH}/furevercare.png`} 
                 alt="Dashboard Overview" 
+                width={1200}
+                height={800}
                 className="w-full h-auto block" 
+                showText
               />
             </div>
           </div>
@@ -145,16 +149,20 @@ export default function FureverCareDetails() {
               </div>
               <div className="flex flex-col gap-8 md:gap-16">
                 <div className="relative border border-zinc-800 shadow-2xl">
-                   <img 
+                   <SkeletonImage 
                      src={`${BASE_PATH}/w1.png`} 
                      alt="Web Dashboard Interface 1" 
+                     width={1200}
+                     height={800}
                      className="w-full h-auto block" 
                    />
                 </div>
                 <div className="relative border border-zinc-800 shadow-2xl">
-                   <img 
+                   <SkeletonImage 
                      src={`${BASE_PATH}/w2.png`} 
                      alt="Web Dashboard Interface 2" 
+                     width={1200}
+                     height={800}
                      className="w-full h-auto block" 
                    />
                 </div>
@@ -174,9 +182,10 @@ export default function FureverCareDetails() {
                   viewport={{ once: true }}
                   className="relative w-full max-w-[280px] sm:max-w-[300px] aspect-[9/19] rounded-[2rem] overflow-hidden shadow-2xl border-4 border-zinc-800 bg-zinc-900"
                 >
-                   <img 
+                   <SkeletonImage 
                      src={`${BASE_PATH}/m1.jpg`} 
                      alt="Mobile UI 1" 
+                     fill
                      className="w-full h-full object-cover" 
                    />
                 </motion.div>
@@ -187,9 +196,10 @@ export default function FureverCareDetails() {
                   transition={{ delay: 0.15 }}
                   className="relative w-full max-w-[280px] sm:max-w-[300px] aspect-[9/19] rounded-[2rem] overflow-hidden shadow-2xl border-4 border-zinc-800 bg-zinc-900"
                 >
-                   <img 
+                   <SkeletonImage 
                      src={`${BASE_PATH}/m2.jpg`} 
                      alt="Mobile UI 2" 
+                     fill
                      className="w-full h-full object-cover" 
                    />
                 </motion.div>

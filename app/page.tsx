@@ -7,6 +7,7 @@ import Image from "next/image";
 import ResumePage from "@/components/ui/portfolio-hero-with-paper-shaders";
 import { ProjectShowcase } from "@/components/ui/project-showcase";
 import ProfileCard from "@/components/ui/profile-card-1";
+import { SkeletonImage } from "@/components/ui/skeleton-image";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
@@ -91,7 +92,7 @@ export default function Home() {
 
       {/* --- FIXED BACKGROUND LAYER --- */}
       <div className="fixed inset-0 z-[-1] w-full h-screen">
-        <Image
+        <SkeletonImage
           src={`${BASE_PATH}/mayores1.png`}
           alt="Background Image"
           fill

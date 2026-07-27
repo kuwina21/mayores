@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Image from "next/image"
+import { SkeletonImage } from "@/components/ui/skeleton-image"
 import { motion } from "framer-motion"
 
 export default function ResumePage() {
@@ -48,7 +48,7 @@ export default function ResumePage() {
             {/* Right Side: Image only */}
             <div className="flex w-full md:w-1/2 h-[50vh] md:h-auto relative bg-[#0a0a0a] overflow-hidden items-center justify-center">
                 <div className="relative w-full h-full">
-                    <Image
+                    <SkeletonImage
                         src={`${BASE_PATH}/mayores3.jpg`}
                         alt="Shandy Mayores"
                         fill
