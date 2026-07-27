@@ -124,13 +124,13 @@ export function ProjectShowcase({ projects, className = "max-w-4xl mx-auto px-6 
                                 <div className="flex-1 min-w-0">
                                     {/* Title with animated underline */}
                                     <div className="inline-flex items-center gap-4">
-                                        <h3 className="text-white font-black text-2xl sm:text-3xl md:text-5xl uppercase tracking-tighter leading-none italic">
+                                        <h3 className="font-flux font-[900] text-2xl sm:text-3xl md:text-5xl uppercase tracking-[-0.08em] leading-none select-none text-[#cccccc] opacity-90 py-1">
                                             <span className="relative">
                                                 {project.title}
                                                 {/* Animated underline */}
                                                 <span
                                                     className={`
-                            absolute left-0 -bottom-1 h-1 bg-blue-600
+                            absolute left-0 -bottom-1 h-0.5 bg-white
                             transition-all duration-300 ease-out
                             ${hoveredIndex === index ? "w-full" : "w-0"}
                           `}
@@ -141,7 +141,7 @@ export function ProjectShowcase({ projects, className = "max-w-4xl mx-auto px-6 
                                         {/* Arrow that slides in */}
                                         <ArrowUpRight
                                             className={`
-                        w-8 h-8 text-blue-500
+                        w-8 h-8 text-white
                         transition-all duration-300 ease-out
                         ${hoveredIndex === index
                                                     ? "opacity-100 translate-x-0 translate-y-0"
@@ -169,7 +169,7 @@ export function ProjectShowcase({ projects, className = "max-w-4xl mx-auto px-6 
                                         className={`
                         text-[10px] md:text-xs font-mono tabular-nums px-3 md:px-4 py-1.5 md:py-2 border rounded-full uppercase tracking-widest
                         transition-all duration-300 ease-out
-                        ${hoveredIndex === index ? "text-white border-blue-500 bg-blue-500/10" : "text-white/40 border-white/20"}
+                        ${hoveredIndex === index ? "text-white border-white bg-white/10" : "text-white/40 border-white/20"}
                     `}
                                     >
                                         {project.tech}

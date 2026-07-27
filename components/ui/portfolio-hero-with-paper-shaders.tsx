@@ -17,6 +17,9 @@ export default function ResumePage() {
                         <div className="mb-2">
                             <h2 className="text-lg font-normal uppercase tracking-widest border-b border-black pb-4">SHANDY MAYORES</h2>
                         </div>
+                        <p className="text-xs font-bold uppercase tracking-[0.15em] text-zinc-600 mt-2 mb-1">
+                            Develop &mdash; Design &mdash; Decipher &mdash; Devise
+                        </p>
                         <p className="text-xs opacity-60">Birthdate: January 21, 2004</p>
                     </div>
 

@@ -87,7 +87,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="bg-transparent text-white selection:bg-blue-600 font-sans relative">
+    <div className="bg-transparent text-white selection:bg-zinc-800 font-sans relative">
 
       {/* --- FIXED BACKGROUND LAYER --- */}
       <div className="fixed inset-0 z-[-1] w-full h-screen">
@@ -99,9 +99,9 @@ export default function Home() {
           priority
         />
 
-        {/* OVERLAY: DARKNESS */}
+        {/* OVERLAY: DARKNESS (Desktop Only) */}
         <div
-          className="absolute inset-0 z-10"
+          className="absolute inset-0 z-10 hidden md:block"
           style={{
             background: "linear-gradient(to right, #000000 0%, #000000 min(40vw, 3in), transparent 100%)"
           }}
@@ -110,7 +110,7 @@ export default function Home() {
 
       {/* GLOBAL PROGRESS BAR */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-blue-600 origin-left z-[100]"
+        className="fixed top-0 left-0 right-0 h-1 bg-white origin-left z-[100]"
         style={{ scaleX }}
       />
 
@@ -129,28 +129,24 @@ export default function Home() {
           style={{ y: kuwinaY }}
           className="absolute top-[12%] md:top-[8%] left-0 z-10 w-full flex justify-start -ml-1 sm:-ml-2 md:-ml-6 overflow-hidden pointer-events-none"
         >
-          <h1 className="text-[22vw] sm:text-[20vw] md:text-[18vw] font-[900] leading-none tracking-[-0.08em] uppercase select-none text-[#cccccc] opacity-90">
+          <h1 className="text-[22vw] sm:text-[20vw] md:text-[18vw] font-[900] font-flux leading-none tracking-[-0.08em] uppercase select-none text-[#cccccc] opacity-90">
             KUWINA
           </h1>
         </motion.div>
 
         {/* BOTTOM ROW */}
         <div className="flex justify-between items-end z-30 pb-12 px-8 md:px-16">
-          <div className="flex flex-col gap-0.5 text-[10px] md:text-sm font-light tracking-[0.05em] opacity-80">
-            <p>@shandy.mayores7@gmail.com</p>
-          </div>
-
-          {/* Arrow Indicator: Anchored to the absolute bottom of the page with increased height */}
+          {/* Arrow Indicator: Fixed & consistent left anchor aligned with portrait image */}
           <motion.div style={{ y: arrowY }} className="absolute left-[15%] sm:left-[25%] md:left-[33%] bottom-0 flex flex-col items-start z-40 pointer-events-none">
-            <div className="w-3 h-3 border-t-2 border-l-2 border-white rotate-45 -mt-1.5 opacity-100 -ml-[5.5px]"></div>
-            <div className="h-[35vh] sm:h-[40vh] md:h-[45vh] w-[1.5px] bg-white opacity-80"></div>
+            <div className="w-3 h-3 border-t-2 border-l-2 border-white rotate-45 -mt-1.5 opacity-100 -ml-[5.5px]" />
+            <div className="h-[40vh] sm:h-[42vh] md:h-[45vh] w-[1.5px] bg-white opacity-80" />
           </motion.div>
         </div>
 
         {/* THE PERSON IMAGE (mayores2.png) - FLUSH START AT ARROW LINE */}
         <motion.div
           style={{ y: portraitY }}
-          className="absolute left-[15.2%] sm:left-[25.2%] md:left-[33.2%] right-0 bottom-0 h-[50%] sm:h-[55%] md:h-[60%] z-20 pointer-events-none"
+          className="absolute left-[15%] sm:left-[25%] md:left-[33%] right-0 bottom-0 h-[52%] sm:h-[56%] md:h-[60%] z-20 pointer-events-none"
         >
           <div className="relative w-full h-full">
             <Image
@@ -176,15 +172,14 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-4 uppercase text-white drop-shadow-lg"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-flux font-[900] leading-none tracking-[-0.08em] uppercase select-none text-[#cccccc] opacity-90 mb-4"
           >
             THRIVING TO LEARN NEW THINGS.
           </motion.h2>
           
-          <p className="text-xl md:text-2xl font-light leading-relaxed mb-6 text-white/90 drop-shadow-md">
+          <p className="text-xl md:text-2xl font-light leading-relaxed font-[family-name:var(--font-poppins)] text-white/90 drop-shadow-md">
             unemployed need job pls
           </p>
-          <div className="h-1.5 w-16 bg-blue-600"></div>
         </div>
       </section>
 
@@ -199,9 +194,9 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-4xl sm:text-5xl md:text-7xl font-black italic uppercase tracking-tighter text-white drop-shadow-lg"
+              className="text-4xl sm:text-5xl md:text-7xl font-flux font-[900] leading-none tracking-[-0.08em] uppercase select-none text-[#cccccc] opacity-90"
             >
-              The <span className="text-blue-600">Project</span>
+              The Projects
             </motion.h2>
           </div>
           <div className="flex-grow">
@@ -212,87 +207,104 @@ export default function Home() {
 
         {/* RIGHT SIDE: SKILLS / ARSENAL */}
         <div className="w-full md:w-1/3 flex flex-col justify-center border-l-0 md:border-l border-zinc-800/30 pl-0 md:pl-12 pt-12 md:pt-0">
-          <div className="mb-8 text-center md:text-left">
-            <h3 className="text-xl font-black uppercase text-white tracking-widest">Skills</h3>
-            <div className="h-1 w-12 bg-blue-600 mt-2 mx-auto md:mx-0"></div>
+          <div className="mb-6 text-center md:text-left">
+            <h3 className="text-xl font-flux font-[900] leading-none tracking-[-0.08em] uppercase text-[#cccccc] opacity-90">Skills</h3>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-4 md:gap-6">
-            
-            {/* Skill Group 1 */}
+          <div className="grid grid-cols-1 gap-4">
+            {/* Single Unified Skills Container */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="flex flex-col border border-zinc-800 p-6 md:p-8 hover:border-white/40 transition-colors bg-zinc-950/50 group"
+            >
+              <ul className="space-y-3 font-mono text-xs md:text-sm text-zinc-400 opacity-90">
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-white/80 rounded-none shrink-0" />Web App Development (Laravel, React, PHP)</li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-white/80 rounded-none shrink-0" />Mobile App Development (Flutter)</li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-white/80 rounded-none shrink-0" />Automation (n8n Workflow Automation)</li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-white/80 rounded-none shrink-0" />UI/UX Design & Basic Web Development</li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-white/80 rounded-none shrink-0" />Software & Design Tools (Figma, Canva)</li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-white/80 rounded-none shrink-0" />MS Office Suite (Excel, Word, PowerPoint)</li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-white/80 rounded-none shrink-0" />Databases (MySQL, Firebase)</li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-white/80 rounded-none shrink-0" />Game Development (Roblox Studio / Lua, Unity / C#)</li>
+              </ul>
+            </motion.div>
+          </div>
+
+          {/* CERTIFICATES SECTION */}
+          <div className="mt-10 mb-6 text-center md:text-left">
+            <h3 className="text-xl font-flux font-[900] leading-none tracking-[-0.08em] uppercase text-[#cccccc] opacity-90">Certificates</h3>
+          </div>
+          <div className="grid grid-cols-1 gap-4">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="flex flex-col border border-zinc-800 p-6 md:p-8 hover:border-blue-500/50 transition-colors bg-zinc-950/50 group"
+              className="flex flex-col border border-zinc-800 p-6 md:p-8 hover:border-white/40 transition-colors bg-zinc-950/50 group"
             >
-              <h3 className="text-xl md:text-2xl font-bold uppercase tracking-wider mb-4 md:mb-6 text-white group-hover:text-blue-400 transition-colors">Game Dev</h3>
-              <ul className="space-y-3 md:space-y-4 font-mono text-xs md:text-sm text-zinc-400">
-                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />Roblox Studio (Lua)</li>
-                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />Unity (C#)</li>
-              </ul>
-            </motion.div>
-
-            {/* Skill Group 2 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="flex flex-col border border-zinc-800 p-6 md:p-8 hover:border-blue-500/50 transition-colors bg-zinc-950/50 group"
-            >
-              <h3 className="text-xl md:text-2xl font-bold uppercase tracking-wider mb-4 md:mb-6 text-white group-hover:text-blue-400 transition-colors">App Dev</h3>
-              <ul className="space-y-3 md:space-y-4 font-mono text-xs md:text-sm text-zinc-400">
-                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />Flutter</li>
-                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />React / Next.js</li>
-                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />Tailwind CSS</li>
-              </ul>
-            </motion.div>
-
-            {/* Skill Group 3 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-col border border-zinc-800 p-6 md:p-8 hover:border-blue-500/50 transition-colors bg-zinc-950/50 group"
-            >
-              <h3 className="text-xl md:text-2xl font-bold uppercase tracking-wider mb-4 md:mb-6 text-white group-hover:text-blue-400 transition-colors">Backend & DB</h3>
-              <ul className="space-y-3 md:space-y-4 font-mono text-xs md:text-sm text-zinc-400">
-                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />Firebase</li>
-                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />MySQL</li>
-              </ul>
-            </motion.div>
-
-            {/* Skill Group 4 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-col border border-zinc-800 p-6 md:p-8 hover:border-blue-500/50 transition-colors bg-zinc-950/50 group"
-            >
-              <h3 className="text-xl md:text-2xl font-bold uppercase tracking-wider mb-4 md:mb-6 text-white group-hover:text-blue-400 transition-colors">Design & AI Tools</h3>
-              <ul className="space-y-3 md:space-y-4 font-mono text-xs md:text-sm text-zinc-400">
-                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />Figma / Canva</li>
-                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />AI & MCP Integration</li>
-                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />Gemini CLI / Cursor</li>
-                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />Antigravity Agent</li>
+              <ul className="space-y-3 font-mono text-xs md:text-sm text-zinc-400 opacity-90">
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-white/80 rounded-none shrink-0" />Artificial Intelligence (AI) Prompting for Automation Level III (TESDA)</li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-white/80 rounded-none shrink-0" />Java Fundamentals</li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-white/80 rounded-none shrink-0" />SAP HANA</li>
               </ul>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* --- PAGE 6: FINALE --- */}
-      <section className="relative z-20 min-h-[80vh] flex flex-col items-center justify-center px-6 py-16 md:py-24">
-        <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-4xl sm:text-5xl md:text-[8vw] font-black tracking-tighter leading-none italic uppercase drop-shadow-lg text-white">
-            Contact
-          </h2>
+      {/* --- PAGE 5: FINALE --- */}
+      <section className="relative z-20 min-h-screen flex items-center justify-center px-6 sm:px-12 md:px-24 py-16 md:py-24">
+        <div className="w-full max-w-7xl flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-20">
+          
+          {/* LEFT COLUMN: PROMPT QUESTIONS LIST */}
+          <div className="w-full md:w-1/2 flex flex-col justify-center items-start text-left space-y-3 sm:space-y-4">
+            {[
+              { from: "Capstone", to: "" },
+              { from: "Paper-based", to: "application" },
+              { from: "Manual", to: "automation" },
+              { from: "Idea", to: "development" },
+              { from: "Idea", to: "design" },
+              { from: "Concept", to: "system" },
+              { from: "Problem", to: "solution" }
+            ].map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, y: 0, x: 0 }}
+                transition={{ duration: 0.4, delay: idx * 0.06 }}
+                className="flex items-center flex-wrap gap-2 text-lg sm:text-xl md:text-2xl lg:text-3xl font-flux font-[900] leading-none uppercase tracking-[-0.05em] select-none text-[#cccccc] opacity-90 hover:text-white transition-colors"
+              >
+                <span>{item.from}</span>
+                {item.to ? (
+                  <>
+                    <span className="font-mono text-xs sm:text-sm font-normal text-zinc-500 lowercase tracking-normal mx-1">
+                      to
+                    </span>
+                    <span>{item.to}</span>
+                  </>
+                ) : (
+                  <span className="text-zinc-500 font-mono text-xs sm:text-sm font-normal uppercase tracking-normal">?</span>
+                )}
+              </motion.div>
+            ))}
+          </div>
+
+          {/* RIGHT COLUMN: CONTACT & PROFILE CARD */}
+          <div className="w-full md:w-1/2 flex flex-col items-center justify-center">
+            <div className="text-center mb-8 md:mb-10">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-flux font-[900] leading-none tracking-[-0.08em] uppercase select-none text-[#cccccc] opacity-90">
+                Contact
+              </h2>
+            </div>
+            <ProfileCard 
+              avatarUrl={`${BASE_PATH}/pfp.jpg`} 
+              githubUrl="https://github.com/kuwina21" 
+              instagramUrl="https://www.instagram.com/kuwina__/" 
+              linkedinUrl="https://www.linkedin.com/in/shandy-mayores-34a023388/" 
+            />
+          </div>
+
         </div>
-        <ProfileCard 
-          avatarUrl={`${BASE_PATH}/pfp.jpg`} 
-          githubUrl="https://github.com/kuwina21" 
-          instagramUrl="https://www.instagram.com/kuwina__/" 
-          linkedinUrl="https://www.linkedin.com/in/shandy-mayores-34a023388/" 
-        />
       </section>
     </div>
   );

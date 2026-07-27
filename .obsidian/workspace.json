@@ -1,0 +1,218 @@
+{
+  "main": {
+    "id": "5bc8682e14c07708",
+    "type": "split",
+    "children": [
+      {
+        "id": "f317fff8cf1d342f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f5065e6495a60cdf",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Untitled.canvas",
+                "viewState": {
+                  "x": 27.541171629275787,
+                  "y": -255.21000751438464,
+                  "zoom": -1.0754284915526713
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "Untitled"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "290aa34af2cdc708",
+    "type": "split",
+    "children": [
+      {
+        "id": "968da85402b3ce37",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "122cd47e1a76b149",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "a9c73a990b412865",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "71ab4dae1b845ae7",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "fd219dd1e6a4f3f6",
+    "type": "split",
+    "children": [
+      {
+        "id": "1b42297d7107d6c2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6454e7bb4ff60dbd",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Untitled.canvas",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Untitled"
+            }
+          },
+          {
+            "id": "c387c038eb8183ae",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Untitled.canvas",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Untitled"
+            }
+          },
+          {
+            "id": "e0d96408bfe590e3",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "158ad85218e2565c",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "a59ef13ea06b26ea",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Untitled.canvas",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Untitled"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "f5065e6495a60cdf",
+  "lastOpenFiles": [
+    "Screenshot 2026-07-24 224142.png",
+    "s.png",
+    "s.png.png",
+    "s",
+    "components/ui/phone-mockups-1.tsx",
+    "components/ui/phone-mockups-1-utils/phone-carousel.tsx",
+    "components/ui/phone-mockups-1-utils",
+    "components/ui/button.tsx",
+    "node_modules/@radix-ui/react-slot/node_modules/@radix-ui/primitive/dist/internal/is-development.true.mjs.map",
+    "node_modules/@radix-ui/react-slot/node_modules/@radix-ui/primitive/dist/internal/is-development.true.mjs",
+    "node_modules/@radix-ui/react-slot/node_modules/@radix-ui/primitive/dist/internal/is-development.false.js",
+    "node_modules/@radix-ui/react-slot/node_modules/@radix-ui/primitive/dist/internal/is-development.false.js.map",
+    "node_modules/@radix-ui/react-slot/node_modules/@radix-ui/primitive/dist/internal/is-development.true.js.map",
+    "node_modules/radix-ui/node_modules/@radix-ui/react-slot/README.md",
+    "node_modules/@radix-ui/react-popover/node_modules/@radix-ui/react-slot/README.md",
+    "node_modules/@radix-ui/react-primitive/node_modules/@radix-ui/react-slot/README.md",
+    "Untitled.md",
+    "Untitled.canvas",
+    "2026-07-24.md",
+    "node_modules/execa/readme.md",
+    "node_modules/eslint-plugin-react/README.md",
+    "node_modules/fs-extra/README.md",
+    "public/Certificate2.jpg",
+    "public/Certificate1.jpg",
+    "WORKSPACE.md",
+    "README.md"
+  ]
+}

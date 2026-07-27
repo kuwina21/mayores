@@ -59,7 +59,7 @@ const ProfileCardDemo = ({
         ],
         actionButton: {
             text: 'Contact Me',
-            href: `mailto:${email}`,
+            href: `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`,
         },
     };
 
@@ -122,14 +122,11 @@ const GlassmorphismProfileCard = ({
     return (
         <div className="relative w-full max-w-sm">
             <div
-                className="relative flex flex-col items-center p-8 rounded-3xl border transition-all duration-500 ease-out backdrop-blur-xl bg-card/10 border-white/20 overflow-hidden min-h-[380px]"
-                style={{
-                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
-                }}
+                className="relative flex flex-col items-center p-8 rounded-none border transition-all duration-300 ease-out bg-zinc-950 border-zinc-800 overflow-hidden min-h-[380px]"
             >
-                {/* Normal Profile details */}
-                <div className={`flex flex-col items-center w-full transition-all duration-300 ${isChatOpen ? 'opacity-0 scale-95 pointer-events-none' : 'opacity-100 scale-100'}`}>
-                    <div className="w-24 h-24 mb-4 rounded-full p-1 border-2 border-white/30 truncate relative overflow-hidden">
+                {/* Profile details */}
+                <div className="flex flex-col items-center w-full">
+                    <div className="w-24 h-24 mb-4 rounded-full p-1 border border-zinc-700 truncate relative overflow-hidden">
                         <Image
                             src={avatarUrl}
                             alt={`${name}'s Avatar`}
@@ -138,16 +135,16 @@ const GlassmorphismProfileCard = ({
                             onError={(e) => {
                                 const target = e.target as HTMLImageElement;
                                 target.onerror = null;
-                                target.src = `https://placehold.co/96x96/6366f1/white?text=${name.charAt(0)}`;
+                                target.src = `https://placehold.co/96x96/171717/white?text=${name.charAt(0)}`;
                             }}
                         />
                     </div>
 
-                    <h2 className="text-2xl font-bold text-white tracking-tight">{name}</h2>
-                    {title && <p className="mt-1 text-sm font-medium text-blue-400">{title}</p>}
-                    <p className="mt-4 text-center text-sm leading-relaxed text-zinc-300">{bio}</p>
+                    <h2 className="text-2xl font-flux font-bold text-white tracking-tight uppercase">{name}</h2>
+                    {title && <p className="mt-1 text-sm font-mono text-zinc-400">{title}</p>}
+                    <p className="mt-4 text-center text-sm font-mono leading-relaxed text-zinc-400">{bio}</p>
 
-                    <div className="w-1/2 h-px my-6 rounded-full bg-white/20" />
+                    <div className="w-1/2 h-px my-6 bg-zinc-800" />
 
                     <div className="flex items-center justify-center gap-3">
                         {socialLinks.map((item) => (
@@ -155,62 +152,21 @@ const GlassmorphismProfileCard = ({
                         ))}
                     </div>
 
-                    <ActionButton action={actionButton} onClick={() => setIsChatOpen(true)} />
-                </div>
-
-                {/* Interactive Chat Overlay */}
-                <AnimatePresence>
-                    {isChatOpen && (
-                        <motion.div 
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: 20 }}
-                            transition={{ duration: 0.3 }}
-                            className="absolute inset-0 p-8 flex flex-col justify-between items-center bg-zinc-950/40"
+                    <div className="flex flex-col gap-3 w-full mt-8">
+                        <ActionButton action={actionButton} />
+                        
+                        <a
+                            href={`${process.env.NODE_ENV === 'production' ? '/mayores' : ''}/Resume.pdf`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center gap-2 px-6 py-3 rounded-none font-mono font-bold text-xs uppercase tracking-widest transition-all duration-300 ease-out active:scale-95 bg-zinc-900 hover:bg-zinc-800 text-white border border-zinc-800"
                         >
-                            <div className="w-full flex justify-between items-center mb-4">
-                                <h3 className="text-lg font-bold text-white">Send Message</h3>
-                                <button onClick={() => { setIsChatOpen(false); setMessage(''); }} className="text-zinc-400 hover:text-white transition-colors">
-                                    <X size={18} />
-                                </button>
-                            </div>
-
-                            <textarea
-                                className="flex-1 w-full p-4 bg-white/5 border border-white/10 rounded-xl text-white text-sm focus:outline-none focus:border-blue-500/50 transition-colors resize-none placeholder-zinc-500 mb-6 font-sans"
-                                placeholder="Type your message here..."
-                                value={message}
-                                onChange={(e) => setMessage(e.target.value)}
-                                disabled={isSending || isSent}
-                            />
-
-                            <button
-                                onClick={handleSend}
-                                disabled={!message.trim() || isSending || isSent}
-                                className="w-full flex items-center justify-center gap-2 py-3 rounded-full font-semibold text-base transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed bg-blue-600 hover:bg-blue-500 text-white"
-                            >
-                                {isSending ? (
-                                    <>
-                                        <Loader2 size={18} className="animate-spin" />
-                                        <span>Sending...</span>
-                                    </>
-                                ) : isSent ? (
-                                    <>
-                                        <Check size={18} />
-                                        <span>Opened Mail!</span>
-                                    </>
-                                ) : (
-                                    <>
-                                        <Send size={16} />
-                                        <span>Send via Mail</span>
-                                    </>
-                                )}
-                            </button>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
+                            <span>Resume PDF</span>
+                            <ArrowUpRight size={14} />
+                        </a>
+                    </div>
+                </div>
             </div>
-
-            <div className="absolute inset-0 rounded-3xl -z-10 transition-all duration-500 ease-out blur-3xl opacity-40 bg-gradient-to-r from-blue-600/50 to-purple-600/50" />
         </div>
     );
 };
@@ -221,28 +177,29 @@ const SocialButton = ({ item, setHoveredItem, hoveredItem }: { item: SocialLink,
             href={item.href}
             target="_blank"
             rel="noreferrer"
-            className="relative flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 ease-out group overflow-hidden bg-white/10 hover:bg-white/20 border border-white/10"
+            className="relative flex items-center justify-center w-12 h-12 rounded-none transition-all duration-300 ease-out group overflow-hidden bg-zinc-900 hover:bg-zinc-800 border border-zinc-800"
             onMouseEnter={() => setHoveredItem(item.id)}
             onMouseLeave={() => setHoveredItem(null)}
             aria-label={item.label}
         >
             <div className="relative z-10 flex items-center justify-center">
-                <item.icon size={20} className="transition-all duration-200 ease-out text-white/70 group-hover:text-white" />
+                <item.icon size={20} className="transition-all duration-200 ease-out text-zinc-400 group-hover:text-white" />
             </div>
         </a>
         <Tooltip item={item} hoveredItem={hoveredItem} />
     </div>
 );
 
-const ActionButton = ({ action, onClick }: { action: ActionButtonProps, onClick?: () => void }) => (
-    <button
-        onClick={onClick}
-        className="flex items-center gap-2 px-6 py-3 mt-8 rounded-full font-semibold text-base backdrop-blur-sm transition-all duration-300 ease-out hover:scale-[1.03] active:scale-95 group bg-blue-600 text-white"
-        style={{ boxShadow: '0 4px 20px rgba(37, 99, 235, 0.3)' }}
+const ActionButton = ({ action }: { action: ActionButtonProps }) => (
+    <a
+        href={action.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-center gap-2 px-6 py-3 w-full rounded-none font-mono font-bold text-xs uppercase tracking-widest transition-all duration-300 ease-out active:scale-95 group bg-white hover:bg-zinc-200 text-black"
     >
         <span>{action.text}</span>
-        <Mail size={16} className="transition-transform duration-300 ease-out group-hover:scale-110" />
-    </button>
+        <Mail size={14} className="transition-transform duration-300 ease-out group-hover:scale-110" />
+    </a>
 );
 
 const Tooltip = ({ item, hoveredItem }: { item: SocialLink, hoveredItem: string | null }) => (
