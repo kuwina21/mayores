@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   title: "Kuwina Portfolio | Shandy Mayores",
   description: "Portfolio of Shandy Mayores - Game Developer, App Developer, and UI/UX Enthusiast.",
   icons: {
-    icon: process.env.NODE_ENV === "production" ? "/mayores/logo.png" : "/logo.png",
-    apple: process.env.NODE_ENV === "production" ? "/mayores/logo.png" : "/logo.png",
+    icon: (process.env.NODE_ENV === "production" && !process.env.VERCEL) ? "/mayores/logo.png" : "/logo.png",
+    apple: (process.env.NODE_ENV === "production" && !process.env.VERCEL) ? "/mayores/logo.png" : "/logo.png",
   },
 };
 
