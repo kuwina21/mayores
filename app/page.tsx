@@ -57,7 +57,7 @@ export default function Home() {
       tech: "Flutter / Firebase",
       desc: "A Web-Based and Mobile System​ for Pet Health Management and Veterinary Clinic Operations​",
       link: "/project/001",
-      imgSrc: `${BASE_PATH}/furevercare.png`,
+      imgSrc: `${BASE_PATH}/project_001/furevercare.png`,
       imgPos: "object-center"
     },
     {
@@ -66,7 +66,7 @@ export default function Home() {
       tech: "Unity / C#",
       desc: "Rise to Glory: Guide Loyd, a frog ninja, through the deadly Labyrinth of Ascension in this precision 2D platformer.",
       link: "/project/002",
-      imgSrc: `${BASE_PATH}/FALL_L.jpg`,
+      imgSrc: `${BASE_PATH}/project_002/FALL_L.jpg`,
       imgPos: "object-top"
     },
     {
@@ -75,6 +75,7 @@ export default function Home() {
       tech: "Laravel / MySQL",
       desc: "A management or tracking system built utilizing Laravel for automating stakeholder operations and analytics.",
       link: "/project/003",
+      imgSrc: `${BASE_PATH}/project_003/login.png`,
       imgPos: "object-center"
     },
     {
@@ -83,6 +84,16 @@ export default function Home() {
       tech: "Roblox Studio / Luau",
       desc: "Action-packed survival experience built on Roblox focusing on fast-paced movement mechanics and physical puzzles.",
       link: "/project/004",
+      imgSrc: `${BASE_PATH}/project_004/GameThumbnail.png`,
+      imgPos: "object-center"
+    },
+    {
+      id: "005",
+      title: "Help Desk",
+      tech: "Laravel / Livewire",
+      desc: "Comprehensive ticketing, SLA priority tracking, issue management, and PDF report generation system.",
+      link: "/project/005",
+      imgSrc: `${BASE_PATH}/project_005/helpdesk.png`,
       imgPos: "object-center"
     }
   ];
@@ -231,11 +242,8 @@ export default function Home() {
                 transition={{ duration: 0.5 }}
                 className="text-xl sm:text-2xl font-flux font-[900] leading-none tracking-[-0.08em] uppercase text-[#cccccc] opacity-90"
               >
-                Mini Projects & Experiments
+                Mini Projects
               </motion.h3>
-              <p className="text-xs font-mono text-zinc-500 mt-2">
-                Utility scripts, automated pipelines, and prototype experiments.
-              </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -251,16 +259,16 @@ export default function Home() {
                     className="flex flex-col justify-between border border-zinc-800/80 p-5 bg-zinc-950/60 hover:border-white/60 hover:bg-zinc-900/80 transition-all duration-300 group min-h-[130px] h-full"
                   >
                     <div>
-                      <div className="flex items-start justify-between gap-2 mb-2">
-                        <h4 className="text-sm font-bold font-mono text-zinc-200 group-hover:text-white transition-colors flex items-center gap-1.5">
-                          {mini.title}
-                          <span className="text-zinc-500 group-hover:text-white group-hover:translate-x-0.5 transition-all text-xs">→</span>
+                      <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                        <h4 className="text-sm sm:text-base font-flux font-bold uppercase tracking-wider text-white group-hover:text-white transition-colors flex items-center gap-1.5 min-w-0 break-words">
+                          <span>{mini.title}</span>
+                          <span className="text-zinc-400 group-hover:text-white group-hover:translate-x-0.5 transition-all text-xs shrink-0">↗</span>
                         </h4>
-                        <span className="text-[10px] font-mono text-zinc-400 border border-zinc-800 bg-zinc-900/80 px-2 py-0.5 shrink-0">
+                        <span className="text-[10px] sm:text-xs font-mono px-2.5 py-0.5 border border-zinc-800 rounded-full uppercase tracking-widest text-zinc-400 group-hover:border-white/40 group-hover:text-white transition-all shrink-0">
                           {mini.tech}
                         </span>
                       </div>
-                      <p className="text-xs font-mono text-zinc-400 leading-relaxed">
+                      <p className="text-xs sm:text-sm font-[family-name:var(--font-poppins)] text-zinc-400 font-light leading-relaxed break-words">
                         {mini.desc}
                       </p>
                     </div>
@@ -288,7 +296,19 @@ export default function Home() {
               <div>
                 <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400 mb-3 border-b border-zinc-800 pb-1">Frontend & Mobile</h4>
                 <div className="flex flex-wrap gap-1.5 font-mono text-[11px] text-zinc-300">
-                  {["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Vue.js", "Svelte", "Tailwind CSS", "Bootstrap", "Material UI", "Ant Design", "Chakra UI", "Shadcn UI", "Radix UI", "Lucide React", "Framer", "Flutter", "WordPress", "Progressive Web App (PWA)", "Expo EAS", "Jetpack"].map((skill) => (
+                  {["HTML", "HTML5 Canvas", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Vue.js", "Svelte", "SvelteKit", "Livewire v3", "Alpine.js", "Tailwind CSS", "Bootstrap", "Material UI", "Ant Design", "Chakra UI", "Shadcn UI", "Radix UI", "Lucide React", "Framer", "Flutter (Dart)", "WordPress", "Progressive Web App (PWA)", "Expo EAS", "Jetpack"].map((skill) => (
+                    <span key={skill} className="px-2 py-0.5 border border-zinc-800 bg-zinc-900/60 hover:border-zinc-500 transition-colors">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Category: Game Development & Engines */}
+              <div>
+                <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400 mb-3 border-b border-zinc-800 pb-1">Game Dev & Engines</h4>
+                <div className="flex flex-wrap gap-1.5 font-mono text-[11px] text-zinc-300">
+                  {["Unity Engine (2D)", "C# Scripting", "Roblox Studio", "Luau", "Aseprite (Pixel Art)", "Unity 2D Physics", "Unity AudioMixer", "Roblox DataStore", "Frame Hitbox Engine"].map((skill) => (
                     <span key={skill} className="px-2 py-0.5 border border-zinc-800 bg-zinc-900/60 hover:border-zinc-500 transition-colors">
                       {skill}
                     </span>
@@ -300,7 +320,7 @@ export default function Home() {
               <div>
                 <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400 mb-3 border-b border-zinc-800 pb-1">Backend & APIs</h4>
                 <div className="flex flex-wrap gap-1.5 font-mono text-[11px] text-zinc-300">
-                  {["Node.js", "Python", "PHP", "Laravel", "Express", "FastAPI", "Kotlin", "C++", "Streamlit", "Zod", "Zustand", "TanStack", "better-auth", "JWT", "CORS", "Pydantic", "PayMongo", "Stripe", "PayPal", "Resend"].map((skill) => (
+                  {["Node.js", "Python", "PHP", "Laravel 10 / 11", "Laravel Sanctum", "Laravel Breeze", "Laravel Dompdf", "Express", "FastAPI", "Kotlin", "C++", "Streamlit", "Zod", "Zustand", "TanStack", "better-auth", "JWT", "CORS", "Pydantic", "PayMongo", "Stripe", "PayPal", "Resend"].map((skill) => (
                     <span key={skill} className="px-2 py-0.5 border border-zinc-800 bg-zinc-900/60 hover:border-zinc-500 transition-colors">
                       {skill}
                     </span>
@@ -312,7 +332,7 @@ export default function Home() {
               <div>
                 <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400 mb-3 border-b border-zinc-800 pb-1">Databases & Cloud</h4>
                 <div className="flex flex-wrap gap-1.5 font-mono text-[11px] text-zinc-300">
-                  {["Supabase", "Supabase Auth", "Firebase Auth", "SQLite", "MySQL", "PostgreSQL", "MongoDB", "BigQuery", "Axiom", "Upstash Redis", "Supabase Cloud", "Firebase Cloud", "Supabase Storage", "XAMPP/WAMP", "Laragon", "AWS", "Oracle Cloud", "AWS Networking", "Azure Networking", "Aviatrix", "Aviatrix Multicloud"].map((skill) => (
+                  {["Firebase Firestore", "Firebase Auth", "Cloud Storage", "Firebase Hosting", "FCM", "Supabase", "Supabase Auth", "SQLite", "MySQL", "PostgreSQL", "MongoDB", "BigQuery", "Axiom", "Upstash Redis", "Supabase Cloud", "Firebase Cloud", "Supabase Storage", "XAMPP/WAMP", "Laragon", "AWS", "Oracle Cloud", "AWS Networking", "Azure Networking", "Aviatrix", "Aviatrix Multicloud"].map((skill) => (
                     <span key={skill} className="px-2 py-0.5 border border-zinc-800 bg-zinc-900/60 hover:border-zinc-500 transition-colors">
                       {skill}
                     </span>
@@ -336,7 +356,7 @@ export default function Home() {
               <div>
                 <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400 mb-3 border-b border-zinc-800 pb-1">DevOps, Security & Tooling</h4>
                 <div className="flex flex-wrap gap-1.5 font-mono text-[11px] text-zinc-300">
-                  {["Docker", "GitHub Actions", "GitLab CLI", "Vercel", "ISO 27001", "AWS IAM", "bcrypt", "HSTS", "CSP", "Prettier", "Husky", "Playwright"].map((skill) => (
+                  {["Docker", "GitHub Actions", "GitLab CLI", "Vercel", "Vite", "ISO 27001", "AWS IAM", "bcrypt", "HSTS", "CSP", "Prettier", "Husky", "Playwright"].map((skill) => (
                     <span key={skill} className="px-2 py-0.5 border border-zinc-800 bg-zinc-900/60 hover:border-zinc-500 transition-colors">
                       {skill}
                     </span>

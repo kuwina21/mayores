@@ -67,7 +67,7 @@ export default function ScrollParallaxAlbumPage() {
         <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 font-mono text-xs">
           <div className="border border-zinc-800 p-6 bg-zinc-950/60">
             <h3 className="font-bold uppercase tracking-widest text-zinc-400 mb-3 border-b border-zinc-800 pb-1">
-              Tech Stack
+              Stack
             </h3>
             <ul className="space-y-1.5 text-zinc-300">
               <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-white shrink-0" /> Svelte 5 / SvelteKit</li>

@@ -35,57 +35,95 @@ export default function ProjectFall() {
             </nav>
 
             {/* --- HERO SECTION --- */}
-            <section className="relative min-h-[85vh] md:min-h-screen bg-black flex flex-col items-center justify-end overflow-hidden z-10 pb-16 pt-24 px-4">
-                <motion.div
-                    style={{ scale: heroScale, y: heroY }}
-                    className="absolute inset-0 z-0 opacity-70"
-                >
-                    <SkeletonImage
-                        src={`${BASE_PATH}/FALL_L.jpg`}
-                        alt="Fall: Rise to Glory Landscape"
-                        fill
-                        className="object-cover object-top"
-                        priority
-                        showText
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-                </motion.div>
-
-                <div className="relative z-10 text-center max-w-5xl mx-auto flex flex-col items-center">
+            <section className="relative min-h-[80vh] md:min-h-screen bg-black flex flex-col items-center justify-center overflow-hidden pt-20 pb-12 px-4">
+                <div className="relative z-10 flex flex-col items-center text-center max-w-full">
                     <motion.h1 
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="text-[12.5vw] sm:text-[11.5vw] md:text-[10.5vw] font-flux font-[900] leading-none tracking-[-0.08em] uppercase select-none text-[#cccccc] opacity-90 drop-shadow-2xl py-2"
+                        className="text-[10.5vw] sm:text-[9.5vw] md:text-[8.5vw] font-flux font-[900] leading-none tracking-[-0.08em] uppercase select-none text-[#cccccc] flex flex-wrap justify-center overflow-hidden py-2"
                     >
-                        FALL: RISE TO GLORY
+                        {"FALL".split("").map((char, index) => (
+                            <motion.span
+                                key={index}
+                                initial={{ opacity: 0, y: "100%" }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ 
+                                    duration: 0.8, 
+                                    delay: index * 0.03,
+                                    ease: [0.16, 1, 0.3, 1] 
+                                }}
+                                className="inline-block"
+                            >
+                                {char}
+                            </motion.span>
+                        ))}
                     </motion.h1>
-                    <p className="font-mono text-zinc-400 text-xs md:text-sm uppercase tracking-widest mt-2">
-                        Precision 2D Platformer • Unity & C#
+                    <p className="text-xs sm:text-sm md:text-base font-mono text-zinc-400 uppercase tracking-widest mt-4">
+                        FALL: RISE TO GLORY • Precision 2D Platformer
                     </p>
                 </div>
             </section>
 
             {/* --- GAME OVERVIEW --- */}
             <section className="relative z-20 bg-zinc-950 text-white py-16 md:py-28 border-t border-zinc-900">
-                <div className="max-w-4xl mx-auto px-4 md:px-12 text-center space-y-8">
-                    <span className="inline-block font-mono text-xs text-zinc-400 border border-zinc-800 bg-zinc-900 px-4 py-1.5 uppercase tracking-widest">
-                        Nov 28, 2025
-                    </span>
-
-                    <h2 className="text-3xl sm:text-4xl md:text-6xl font-flux font-[900] leading-none tracking-[-0.08em] uppercase select-none text-[#cccccc] opacity-90">
-                        Project Overview
-                    </h2>
-
-                    <p className="text-base sm:text-lg md:text-xl font-[family-name:var(--font-poppins)] text-zinc-300 font-light leading-relaxed max-w-2xl mx-auto">
-                        Play as <strong className="text-white">Loyd</strong>, a frog ninja seeking redemption. After a tragic fall, he must challenge the deadly <strong className="text-white">Labyrinth of Ascension</strong> to prove his worth and regain his honor.
-                    </p>
-
-                    <div className="flex justify-center gap-3 flex-wrap pt-4">
-                        {["Unity Engine", "C# Programming", "Pixel Art", "2D Physics"].map((tech) => (
-                            <span key={tech} className="bg-zinc-900 border border-zinc-800 px-4 py-2 text-zinc-300 font-mono text-xs uppercase tracking-widest">
-                                {tech}
+                <div className="max-w-7xl mx-auto px-4 md:px-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+                        {/* Left Column (Text) */}
+                        <div className="flex flex-col items-start text-left space-y-6 md:space-y-8">
+                            <span className="inline-block font-mono text-xs text-zinc-400 border border-zinc-800 bg-zinc-900 px-4 py-1.5 uppercase tracking-widest">
+                                Nov 28, 2025
                             </span>
+                            <h2 className="text-4xl sm:text-5xl md:text-6xl font-flux font-[900] leading-none tracking-[-0.08em] uppercase select-none text-[#cccccc] opacity-90">
+                                Project Overview
+                            </h2>
+                            <p className="text-base sm:text-lg md:text-xl font-[family-name:var(--font-poppins)] text-zinc-300 font-light leading-relaxed">
+                                Play as <strong className="text-white">Loyd</strong>, a frog ninja seeking redemption. After a tragic fall, he must challenge the deadly <strong className="text-white">Labyrinth of Ascension</strong> to prove his worth and regain his honor.
+                            </p>
+                            <div className="flex flex-wrap gap-2 pt-2">
+                                {["Unity Engine", "C# Programming", "Pixel Art", "2D Physics"].map((tech) => (
+                                    <span key={tech} className="bg-zinc-900 border border-zinc-800 px-3 py-1.5 text-zinc-300 font-mono text-xs uppercase tracking-widest">
+                                        {tech}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Right Column (Image) */}
+                        <div className="relative w-full bg-zinc-900 border border-zinc-800 shadow-2xl">
+                            <SkeletonImage 
+                                src={`${BASE_PATH}/project_002/FALL_L.jpg`} 
+                                alt="Fall: Rise to Glory Overview" 
+                                width={1200}
+                                height={800}
+                                className="w-full h-auto block object-cover" 
+                                showText
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* --- TECHNOLOGY STACK --- */}
+            <section className="relative z-20 bg-black py-16 md:py-24 px-4 md:px-12 border-t border-zinc-900">
+                <div className="max-w-6xl mx-auto">
+                    <div className="text-center mb-12 md:mb-16">
+                        <h2 className="text-3xl sm:text-4xl md:text-6xl font-flux font-[900] leading-none tracking-[-0.08em] uppercase select-none text-[#cccccc] opacity-90 mb-4">
+                            Stack
+                        </h2>
+                        <div className="w-16 h-0.5 bg-white mx-auto"></div>
+                    </div>
+                    
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+                        {[
+                            { role: "Game Engine", tech: "Unity Engine (2D)" },
+                            { role: "Programming", tech: "C# Scripting" },
+                            { role: "Art & Animation", tech: "Aseprite (Pixel Art)" },
+                            { role: "Physics Engine", tech: "Unity 2D Physics" },
+                            { role: "Audio Pipeline", tech: "Unity AudioMixer" },
+                            { role: "Target Platform", tech: "PC / Windows Standalone" }
+                        ].map((item, i) => (
+                            <div key={i} className="bg-zinc-950 border border-zinc-800 p-6 flex flex-col items-center text-center hover:border-white/40 transition-colors">
+                                <h3 className="font-mono text-[10px] md:text-xs text-zinc-500 uppercase tracking-widest mb-2">{item.role}</h3>
+                                <p className="font-flux font-bold text-white text-sm md:text-base uppercase tracking-wider">{item.tech}</p>
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -96,7 +134,7 @@ export default function ProjectFall() {
                 <div className="max-w-5xl mx-auto">
                     <div className="border border-zinc-800 bg-zinc-950 p-2 shadow-2xl">
                         <div className="relative aspect-video overflow-hidden">
-                            <Image src={`${BASE_PATH}/MainMenu.png`} alt="Main Menu UI" fill className="object-cover" />
+                            <Image src={`${BASE_PATH}/project_002/MainMenu.png`} alt="Main Menu UI" fill className="object-cover" />
                         </div>
                     </div>
                 </div>
@@ -116,7 +154,7 @@ export default function ProjectFall() {
                         {/* Level 1 */}
                         <div className="group relative bg-black p-4 border border-zinc-800 hover:border-white/40 transition-colors">
                             <div className="relative aspect-video overflow-hidden border border-zinc-800">
-                                <Image src={`${BASE_PATH}/Level1.png`} alt="Level 1: The Ascent" fill className="object-cover" />
+                                <Image src={`${BASE_PATH}/project_002/Level1.png`} alt="Level 1: The Ascent" fill className="object-cover" />
                             </div>
                             <div className="p-4 pt-6">
                                 <h3 className="font-flux font-bold text-white uppercase tracking-wider text-lg">Level 01: The Ascent</h3>
@@ -127,7 +165,7 @@ export default function ProjectFall() {
                         {/* Level 2 */}
                         <div className="group relative bg-black p-4 border border-zinc-800 hover:border-white/40 transition-colors">
                             <div className="relative aspect-video overflow-hidden border border-zinc-800">
-                                <Image src={`${BASE_PATH}/Level2.png`} alt="Level 2: Momentum" fill className="object-cover" />
+                                <Image src={`${BASE_PATH}/project_002/Level2.png`} alt="Level 2: Momentum" fill className="object-cover" />
                             </div>
                             <div className="p-4 pt-6">
                                 <h3 className="font-flux font-bold text-white uppercase tracking-wider text-lg">Level 02: Momentum</h3>
@@ -138,7 +176,7 @@ export default function ProjectFall() {
                         {/* Level 3 */}
                         <div className="group relative bg-black p-4 border border-zinc-800 hover:border-white/40 transition-colors">
                             <div className="relative aspect-video overflow-hidden border border-zinc-800">
-                                <Image src={`${BASE_PATH}/Level3.png`} alt="Level 3: The Gauntlet" fill className="object-cover" />
+                                <Image src={`${BASE_PATH}/project_002/Level3.png`} alt="Level 3: The Gauntlet" fill className="object-cover" />
                             </div>
                             <div className="p-4 pt-6">
                                 <h3 className="font-flux font-bold text-white uppercase tracking-wider text-lg">Level 03: The Gauntlet</h3>
@@ -149,7 +187,7 @@ export default function ProjectFall() {
                         {/* Level 4 */}
                         <div className="group relative bg-black p-4 border border-zinc-800 hover:border-white/40 transition-colors">
                             <div className="relative aspect-video overflow-hidden border border-zinc-800">
-                                <Image src={`${BASE_PATH}/Level4.png`} alt="Level 4: Final Boss" fill className="object-cover" />
+                                <Image src={`${BASE_PATH}/project_002/Level4.png`} alt="Level 4: Final Boss" fill className="object-cover" />
                             </div>
                             <div className="p-4 pt-6">
                                 <h3 className="font-flux font-bold text-white uppercase tracking-wider text-lg">Level 04: Final Boss</h3>
@@ -166,7 +204,7 @@ export default function ProjectFall() {
                     <div className="w-full md:w-1/2">
                         <div className="bg-zinc-950 border border-zinc-800 p-3 shadow-2xl">
                             <div className="relative aspect-video bg-zinc-900 overflow-hidden">
-                                <Image src={`${BASE_PATH}/FinalBoss.png`} alt="Giant Stone Head Boss" fill className="object-contain" />
+                                <Image src={`${BASE_PATH}/project_002/FinalBoss.png`} alt="Giant Stone Head Boss" fill className="object-contain" />
                             </div>
                         </div>
                     </div>
@@ -201,9 +239,9 @@ export default function ProjectFall() {
                             loop
                             muted
                             playsInline
-                            poster={`${BASE_PATH}/FALL_L.jpg`}
+                            poster={`${BASE_PATH}/project_002/FALL_L.jpg`}
                         >
-                            <source src={`${BASE_PATH}/fall.mp4`} type="video/mp4" />
+                            <source src={`${BASE_PATH}/project_002/fall.mp4`} type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
                     </div>
@@ -222,7 +260,7 @@ export default function ProjectFall() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div className="group relative bg-zinc-950 p-4 border border-zinc-800 hover:border-white/40 transition-colors">
                             <div className="relative aspect-[4/3] overflow-hidden border border-zinc-800">
-                                <Image src={`${BASE_PATH}/Certificate2.jpg`} alt="Best Game Logo Award" fill className="object-cover" />
+                                <Image src={`${BASE_PATH}/project_002/Certificate2.jpg`} alt="Best Game Logo Award" fill className="object-cover" />
                             </div>
                             <div className="p-4 text-center">
                                 <h3 className="text-white font-flux font-bold uppercase text-base">Best Game Logo</h3>
@@ -232,7 +270,7 @@ export default function ProjectFall() {
 
                         <div className="group relative bg-zinc-950 p-4 border border-zinc-700 hover:border-white transition-colors">
                             <div className="relative aspect-[4/3] overflow-hidden border border-zinc-800">
-                                <Image src={`${BASE_PATH}/Certificate3.jpg`} alt="Best Game Project Award" fill className="object-cover" />
+                                <Image src={`${BASE_PATH}/project_002/Certificate3.jpg`} alt="Best Game Project Award" fill className="object-cover" />
                             </div>
                             <div className="p-4 text-center">
                                 <h3 className="text-white font-flux font-bold uppercase text-base">Best Game Project</h3>
@@ -242,7 +280,7 @@ export default function ProjectFall() {
 
                         <div className="group relative bg-zinc-950 p-4 border border-zinc-800 hover:border-white/40 transition-colors">
                             <div className="relative aspect-[4/3] overflow-hidden border border-zinc-800">
-                                <Image src={`${BASE_PATH}/Certificate1.jpg`} alt="Participation Certificate" fill className="object-cover" />
+                                <Image src={`${BASE_PATH}/project_002/Certificate1.jpg`} alt="Participation Certificate" fill className="object-cover" />
                             </div>
                             <div className="p-4 text-center">
                                 <h3 className="text-white font-flux font-bold uppercase text-base">TimplaTEK Symposium</h3>
@@ -263,14 +301,14 @@ export default function ProjectFall() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <div className="bg-black p-4 border border-zinc-800">
                             <div className="relative aspect-video border border-zinc-800">
-                                <Image src={`${BASE_PATH}/Completion.jpg`} alt="Team Completion" fill className="object-cover" />
+                                <Image src={`${BASE_PATH}/project_002/Completion.jpg`} alt="Team Completion" fill className="object-cover" />
                             </div>
                             <p className="text-zinc-400 font-mono text-xs uppercase text-center mt-4 tracking-widest">FourHead Studio — Dec 2025</p>
                         </div>
 
                         <div className="bg-black p-4 border border-zinc-800">
                             <div className="relative aspect-video border border-zinc-800">
-                                <Image src={`${BASE_PATH}/OverallProject.jpg`} alt="Project Exhibit" fill className="object-cover" />
+                                <Image src={`${BASE_PATH}/project_002/OverallProject.jpg`} alt="Project Exhibit" fill className="object-cover" />
                             </div>
                             <p className="text-zinc-400 font-mono text-xs uppercase text-center mt-4 tracking-widest">The Exhibit Hall</p>
                         </div>
@@ -286,7 +324,7 @@ export default function ProjectFall() {
                             Game Design Document
                         </h2>
                         <a 
-                            href={`${BASE_PATH}/GameDV.pdf`} 
+                            href={`${BASE_PATH}/project_002/GameDV.pdf`} 
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="min-h-[44px] px-4 py-2 bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-mono uppercase tracking-widest border border-zinc-800 flex items-center gap-2 transition-colors active:scale-95"
@@ -297,11 +335,11 @@ export default function ProjectFall() {
                     </div>
 
                     <div className="w-full h-[55vh] md:h-[80vh] bg-zinc-950 border border-zinc-900 overflow-hidden shadow-2xl">
-                        <object data={`${BASE_PATH}/GameDV.pdf`} type="application/pdf" className="w-full h-full">
+                        <object data={`${BASE_PATH}/project_002/GameDV.pdf`} type="application/pdf" className="w-full h-full">
                             <div className="flex items-center justify-center h-full flex-col gap-4 p-6 text-center">
                                 <p className="text-zinc-400 text-sm font-mono">Your browser does not support inline PDF viewing.</p>
                                 <a 
-                                    href={`${BASE_PATH}/GameDV.pdf`} 
+                                    href={`${BASE_PATH}/project_002/GameDV.pdf`} 
                                     target="_blank" 
                                     rel="noopener noreferrer"
                                     className="px-6 py-3 bg-white text-black font-mono font-bold uppercase tracking-wider text-xs"
@@ -314,11 +352,14 @@ export default function ProjectFall() {
                 </div>
             </section>
 
-            {/* --- CONTRIBUTION & RESOURCES --- */}
+            {/* --- PORTFOLIO CONTEXT --- */}
             <section className="relative z-20 bg-zinc-950 text-zinc-300 py-16 md:py-24 px-4 md:px-12 border-t border-zinc-900">
                 <div className="max-w-4xl mx-auto text-center space-y-12">
-                    <p className="text-lg md:text-xl font-[family-name:var(--font-poppins)] font-light leading-relaxed text-zinc-300 italic max-w-2xl mx-auto">
-                        "Enhanced 2D game FALL: Rise to Glory by building custom adventure levels and modifying mechanics to create a challenging user experience."
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-flux font-[900] leading-none tracking-[-0.08em] uppercase select-none text-[#cccccc] opacity-90">
+                        Portfolio Context
+                    </h2>
+                    <p className="text-lg md:text-xl font-[family-name:var(--font-poppins)] font-light leading-relaxed text-zinc-300 italic max-w-3xl mx-auto">
+                        "Enhanced 2D game <strong>FALL: Rise to Glory</strong> by building custom adventure levels and modifying mechanics to create a challenging, highly responsive platforming user experience."
                     </p>
 
                     <div className="border-t border-zinc-900 pt-12 max-w-lg mx-auto">

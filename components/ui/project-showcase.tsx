@@ -46,15 +46,12 @@ export function ProjectShowcase({ projects, className = "max-w-4xl mx-auto px-6 
         }
     }, [mousePosition])
 
-    const handleMouseMove = (e: React.MouseEvent) => {
-        if (containerRef.current) {
-            const rect = containerRef.current.getBoundingClientRect()
+        const handleMouseMove = (e: React.MouseEvent) => {
             setMousePosition({
-                x: e.clientX - rect.left,
-                y: e.clientY - rect.top,
+                x: e.clientX,
+                y: e.clientY,
             })
         }
-    }
 
     const handleMouseEnter = (index: number) => {
         setHoveredIndex(index)
@@ -68,18 +65,16 @@ export function ProjectShowcase({ projects, className = "max-w-4xl mx-auto px-6 
 
     return (
         <section ref={containerRef} onMouseMove={handleMouseMove} className={`relative w-full z-20 ${className}`}>
-            {/* <h2 className="text-blue-500 font-mono text-xs uppercase tracking-widest mb-16 italic drop-shadow-lg text-center md:text-left">Selected Work</h2> */}
-
-            {/* Floating Image Container (Desktop Only mostly, or screen > 768px) */}
+            {/* Floating Image Container */}
             <div
-                className="pointer-events-none fixed z-[60] overflow-hidden rounded-xl shadow-2xl hidden md:block"
+                className="pointer-events-none fixed z-[100] overflow-hidden rounded-xl shadow-2xl hidden md:block"
                 style={{
-                    left: containerRef.current?.getBoundingClientRect().left ?? 0,
-                    top: containerRef.current?.getBoundingClientRect().top ?? 0,
-                    transform: `translate3d(${smoothPosition.x + 40}px, ${smoothPosition.y - 120}px, 0)`,
+                    left: 0,
+                    top: 0,
+                    transform: `translate3d(${smoothPosition.x - 180}px, ${Math.min(smoothPosition.y - 120, typeof window !== 'undefined' ? window.innerHeight - 260 : smoothPosition.y - 120)}px, 0)`,
                     opacity: isVisible ? 1 : 0,
                     scale: isVisible ? 1 : 0.8,
-                    transition: "opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), scale 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                    transition: "opacity 0.2s ease-out, scale 0.2s ease-out",
                 }}
             >
                 <div className="relative w-[360px] h-[240px] bg-secondary rounded-xl overflow-hidden border border-white/10">

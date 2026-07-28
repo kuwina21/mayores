@@ -60,7 +60,7 @@ export default function BoxingGamePage() {
           {/* TECH STACK */}
           <div className="border border-zinc-800 p-6 bg-zinc-950/60">
             <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400 mb-3 border-b border-zinc-800 pb-1">
-              Tech Stack
+              Stack
             </h3>
             <ul className="space-y-1.5 font-mono text-xs text-zinc-300">
               <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-white shrink-0" /> HTML5 Canvas</li>

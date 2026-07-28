@@ -76,7 +76,7 @@ export default function FureverCareDetails() {
             {/* Right Column (Image) */}
             <div className="relative w-full bg-zinc-900 border border-zinc-800">
               <SkeletonImage 
-                src={`${BASE_PATH}/furevercare.png`} 
+                src={`${BASE_PATH}/project_001/furevercare.png`} 
                 alt="Dashboard Overview" 
                 width={1200}
                 height={800}
@@ -84,6 +84,34 @@ export default function FureverCareDetails() {
                 showText
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- TECHNOLOGY STACK --- */}
+      <section className="relative z-20 bg-black py-16 md:py-24 px-4 md:px-12 border-t border-zinc-900">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-flux font-[900] leading-none tracking-[-0.08em] uppercase select-none text-[#cccccc] opacity-90 mb-4">
+              Stack
+            </h2>
+            <div className="w-16 h-0.5 bg-white mx-auto"></div>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            {[
+              { role: "Mobile Framework", tech: "Flutter (Dart)" },
+              { role: "Cloud Backend", tech: "Firebase Firestore" },
+              { role: "Authentication", tech: "Firebase Auth" },
+              { role: "Storage", tech: "Cloud Storage" },
+              { role: "Notifications", tech: "FCM (Firebase Cloud Messaging)" },
+              { role: "Hosting & Deployment", tech: "Firebase Hosting" }
+            ].map((item, i) => (
+              <div key={i} className="bg-zinc-950 border border-zinc-800 p-6 flex flex-col items-center text-center hover:border-white/40 transition-colors">
+                <h3 className="font-mono text-[10px] md:text-xs text-zinc-500 uppercase tracking-widest mb-2">{item.role}</h3>
+                <p className="font-flux font-bold text-white text-sm md:text-base uppercase tracking-wider">{item.tech}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -150,7 +178,7 @@ export default function FureverCareDetails() {
               <div className="flex flex-col gap-8 md:gap-16">
                 <div className="relative border border-zinc-800 shadow-2xl">
                    <SkeletonImage 
-                     src={`${BASE_PATH}/w1.png`} 
+                     src={`${BASE_PATH}/project_001/w1.png`} 
                      alt="Web Dashboard Interface 1" 
                      width={1200}
                      height={800}
@@ -159,7 +187,7 @@ export default function FureverCareDetails() {
                 </div>
                 <div className="relative border border-zinc-800 shadow-2xl">
                    <SkeletonImage 
-                     src={`${BASE_PATH}/w2.png`} 
+                     src={`${BASE_PATH}/project_001/w2.png`} 
                      alt="Web Dashboard Interface 2" 
                      width={1200}
                      height={800}
@@ -183,7 +211,7 @@ export default function FureverCareDetails() {
                   className="relative w-full max-w-[280px] sm:max-w-[300px] aspect-[9/19] rounded-[2rem] overflow-hidden shadow-2xl border-4 border-zinc-800 bg-zinc-900"
                 >
                    <SkeletonImage 
-                     src={`${BASE_PATH}/m1.jpg`} 
+                     src={`${BASE_PATH}/project_001/m1.jpg`} 
                      alt="Mobile UI 1" 
                      fill
                      className="w-full h-full object-cover" 
@@ -197,7 +225,7 @@ export default function FureverCareDetails() {
                   className="relative w-full max-w-[280px] sm:max-w-[300px] aspect-[9/19] rounded-[2rem] overflow-hidden shadow-2xl border-4 border-zinc-800 bg-zinc-900"
                 >
                    <SkeletonImage 
-                     src={`${BASE_PATH}/m2.jpg`} 
+                     src={`${BASE_PATH}/project_001/m2.jpg`} 
                      alt="Mobile UI 2" 
                      fill
                      className="w-full h-full object-cover" 
@@ -218,7 +246,7 @@ export default function FureverCareDetails() {
               Project Manuscript
             </h2>
             <a 
-              href={`${BASE_PATH}/furevercare_manuscript.pdf`} 
+              href={`${BASE_PATH}/project_001/furevercare_manuscript.pdf`} 
               target="_blank" 
               rel="noopener noreferrer"
               className="min-h-[44px] px-4 py-2 bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-mono uppercase tracking-widest border border-zinc-800 flex items-center gap-2 transition-colors active:scale-95"
@@ -231,14 +259,14 @@ export default function FureverCareDetails() {
           {/* PDF VIEWER CONTAINER */}
           <div className="w-full h-[55vh] md:h-[80vh] bg-zinc-950 border border-zinc-900 overflow-hidden shadow-2xl">
             <object
-              data={`${BASE_PATH}/furevercare_manuscript.pdf`}
+              data={`${BASE_PATH}/project_001/furevercare_manuscript.pdf`}
               type="application/pdf"
               className="w-full h-full"
             >
               <div className="flex flex-col items-center justify-center h-full text-center p-6 md:p-12">
                 <p className="text-zinc-400 mb-4 text-sm md:text-base font-mono">Your device does not support inline PDF viewing.</p>
                 <a 
-                  href={`${BASE_PATH}/furevercare_manuscript.pdf`} 
+                  href={`${BASE_PATH}/project_001/furevercare_manuscript.pdf`} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="px-6 py-3 bg-white text-black font-mono font-bold uppercase tracking-wider text-xs"
@@ -248,6 +276,18 @@ export default function FureverCareDetails() {
               </div>
             </object>
           </div>
+        </div>
+      </section>
+
+      {/* --- PORTFOLIO CONTEXT --- */}
+      <section className="relative z-20 bg-zinc-950 text-white py-16 md:py-24 px-4 md:px-12 border-t border-zinc-900">
+        <div className="max-w-4xl mx-auto text-center space-y-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-flux font-[900] leading-none tracking-[-0.08em] uppercase select-none text-[#cccccc] opacity-90">
+            Portfolio Context
+          </h2>
+          <p className="text-lg md:text-xl font-[family-name:var(--font-poppins)] font-light leading-relaxed text-zinc-300 italic max-w-3xl mx-auto">
+            "Furevercare was developed to eliminate record fragmentation in local veterinary services by leveraging a <strong>real-time cloud architecture</strong>. The primary focus was on <strong>instant synchronicity, cross-platform access, and high reliability</strong> for veterinary clinics and pet owners."
+          </p>
         </div>
       </section>
 
