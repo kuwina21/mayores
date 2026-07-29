@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 export default function BoxingGamePage() {
   const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
-  const gameUrl = `${BASE_PATH}/mini-projects/boxing-game/index.html`;
+  const gameUrl = `${BASE_PATH}/mini-projects/boxing-game/`;
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   return (

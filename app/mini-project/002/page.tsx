@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 export default function ScrollParallaxAlbumPage() {
   const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
-  const albumUrl = `${BASE_PATH}/mini-projects/album/index.html`;
+  const albumUrl = `${BASE_PATH}/mini-projects/album/`;
 
   return (
     <main className="bg-black text-white font-sans selection:bg-zinc-800 relative min-h-screen">

@@ -104,14 +104,14 @@ export default function Home() {
       title: "Boxing Match: Gerald vs Owen",
       tech: "HTML5 Canvas / JavaScript",
       desc: "Interactive 2D web boxing arcade game featuring custom character selection, physics, and combat mechanics.",
-      link: "/mini-project/001"
+      link: "/mini-project/001/"
     },
     {
       id: "m02",
       title: "Scroll Parallax Album",
       tech: "Next.js / Framer Motion / Parallax",
       desc: "Editorial photo album experiment featuring dynamic multi-phase scroll parallax, fluid visual transitions, and interactive lightbox gallery.",
-      link: "/mini-project/002"
+      link: "/mini-project/002/"
     }
   ];
 
