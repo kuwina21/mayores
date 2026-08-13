@@ -296,7 +296,7 @@ export default function Home() {
               <div>
                 <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400 mb-3 border-b border-zinc-800 pb-1">Frontend & Mobile</h4>
                 <div className="flex flex-wrap gap-1.5 font-mono text-[11px] text-zinc-300">
-                  {["HTML", "HTML5 Canvas", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Vue.js", "Svelte", "SvelteKit", "Livewire v3", "Alpine.js", "Tailwind CSS", "Bootstrap", "Material UI", "Ant Design", "Chakra UI", "Shadcn UI", "Radix UI", "Lucide React", "Framer", "Flutter (Dart)", "WordPress", "Progressive Web App (PWA)", "Expo EAS", "Jetpack"].map((skill) => (
+                  {["HTML", "HTML5 Canvas", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Vue.js", "Svelte", "SvelteKit", "Tailwind CSS", "Bootstrap", "Material UI", "Ant Design", "Chakra UI", "Shadcn UI", "Radix UI", "Lucide React", "Framer", "Flutter (Dart)", "Progressive Web App (PWA)", "Figma", "Canva", "21stdev", "remotion"].map((skill) => (
                     <span key={skill} className="px-2 py-0.5 border border-zinc-800 bg-zinc-900/60 hover:border-zinc-500 transition-colors">
                       {skill}
                     </span>
@@ -308,7 +308,7 @@ export default function Home() {
               <div>
                 <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400 mb-3 border-b border-zinc-800 pb-1">Game Dev & Engines</h4>
                 <div className="flex flex-wrap gap-1.5 font-mono text-[11px] text-zinc-300">
-                  {["Unity Engine (2D)", "C# Scripting", "Roblox Studio", "Luau", "Aseprite (Pixel Art)", "Unity 2D Physics", "Unity AudioMixer", "Roblox DataStore", "Frame Hitbox Engine"].map((skill) => (
+                  {["Unity Engine (2D)", "C# Scripting", "Roblox Studio", "Luau", "Aseprite (Pixel Art)", "Unity 2D Physics", "Unity AudioMixer", "Roblox DataStore"].map((skill) => (
                     <span key={skill} className="px-2 py-0.5 border border-zinc-800 bg-zinc-900/60 hover:border-zinc-500 transition-colors">
                       {skill}
                     </span>
@@ -320,7 +320,7 @@ export default function Home() {
               <div>
                 <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400 mb-3 border-b border-zinc-800 pb-1">Backend & APIs</h4>
                 <div className="flex flex-wrap gap-1.5 font-mono text-[11px] text-zinc-300">
-                  {["Node.js", "Python", "PHP", "Laravel 10 / 11", "Laravel Sanctum", "Laravel Breeze", "Laravel Dompdf", "Express", "FastAPI", "Kotlin", "C++", "Streamlit", "Zod", "Zustand", "TanStack", "better-auth", "JWT", "CORS", "Pydantic", "PayMongo", "Stripe", "PayPal", "Resend"].map((skill) => (
+                  {["Node.js", "Python", "PHP", "Laravel 10 / 11", "Laravel Sanctum", "Laravel Breeze", "Laravel Dompdf", "Kotlin", "C++", "jwt", "cors", "PayMongo", "Stripe", "PayPal", "Resend", "weppy"].map((skill) => (
                     <span key={skill} className="px-2 py-0.5 border border-zinc-800 bg-zinc-900/60 hover:border-zinc-500 transition-colors">
                       {skill}
                     </span>
@@ -332,7 +332,7 @@ export default function Home() {
               <div>
                 <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400 mb-3 border-b border-zinc-800 pb-1">Databases & Cloud</h4>
                 <div className="flex flex-wrap gap-1.5 font-mono text-[11px] text-zinc-300">
-                  {["Firebase Firestore", "Firebase Auth", "Cloud Storage", "Firebase Hosting", "FCM", "Supabase", "Supabase Auth", "SQLite", "MySQL", "PostgreSQL", "MongoDB", "BigQuery", "Axiom", "Upstash Redis", "Supabase Cloud", "Firebase Cloud", "Supabase Storage", "XAMPP/WAMP", "Laragon", "AWS", "Oracle Cloud", "AWS Networking", "Azure Networking", "Aviatrix", "Aviatrix Multicloud"].map((skill) => (
+                  {["Firebase Firestore", "Firebase Auth", "Cloud Storage", "Firebase Hosting", "fcm", "Supabase", "Supabase Auth", "SQLite", "MySQL", "Supabase Cloud", "Firebase Cloud", "Supabase Storage", "XAMPP/WAMP", "Laragon"].map((skill) => (
                     <span key={skill} className="px-2 py-0.5 border border-zinc-800 bg-zinc-900/60 hover:border-zinc-500 transition-colors">
                       {skill}
                     </span>
@@ -344,7 +344,7 @@ export default function Home() {
               <div>
                 <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400 mb-3 border-b border-zinc-800 pb-1">AI, ML & Computer Vision</h4>
                 <div className="flex flex-wrap gap-1.5 font-mono text-[11px] text-zinc-300">
-                  {["OpenAI API", "Google Gemini", "Claude", "Copilot", "Stitch AI", "Oracle Generative AI", "Gen AI", "Torch", "Tensors", "TensorFlow", "Caffe2", "PyTorch", "Theano", "Pandas", "Pinecone", "InsightFace", "ArcFace embeddings", "OpenCV", "ONNX Runtime", "Google ML Kit Text Recognition", "YOLO", "RetinaFace detection"].map((skill) => (
+                  {["OpenAI API", "Google Gemini", "Claude", "Copilot", "Stitch AI", "Antigravity IDE", "Antigravity CLI", "Cursor", "opencode", "Figma AI", "deepseek", "kling", "google flow", "nanobanana", "flow music", "NotebookLM"].map((skill) => (
                     <span key={skill} className="px-2 py-0.5 border border-zinc-800 bg-zinc-900/60 hover:border-zinc-500 transition-colors">
                       {skill}
                     </span>
@@ -356,7 +356,7 @@ export default function Home() {
               <div>
                 <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400 mb-3 border-b border-zinc-800 pb-1">DevOps, Security & Tooling</h4>
                 <div className="flex flex-wrap gap-1.5 font-mono text-[11px] text-zinc-300">
-                  {["Docker", "GitHub Actions", "GitLab CLI", "Vercel", "Vite", "ISO 27001", "AWS IAM", "bcrypt", "HSTS", "CSP", "Prettier", "Husky", "Playwright"].map((skill) => (
+                  {["Docker", "GitHub Actions", "GitLab CLI", "Vercel", "Vite", "Cloudfare", "N8n", "Azure", "Hermes", "Odyessues", "Ollama", "Laravel", "React", "TailwindCSS", "React Router", "Cypress", "Laravel dusk", "Power Automate", "Obsidian"].map((skill) => (
                     <span key={skill} className="px-2 py-0.5 border border-zinc-800 bg-zinc-900/60 hover:border-zinc-500 transition-colors">
                       {skill}
                     </span>
@@ -381,8 +381,36 @@ export default function Home() {
                 <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-white/80 rounded-none shrink-0" />Artificial Intelligence (AI) Prompting for Automation Level III (TESDA)</li>
                 <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-white/80 rounded-none shrink-0" />Java Fundamentals</li>
                 <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-white/80 rounded-none shrink-0" />SAP HANA</li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-white/80 rounded-none shrink-0" />Microsoft Azue ai fundamentals</li>
               </ul>
             </motion.div>
+          </div>
+
+          {/* FIGMA DESIGNS SECTION */}
+          <div className="mt-10 mb-6 text-center md:text-left">
+            <details className="group border border-zinc-800 bg-zinc-950/50 hover:border-white/40 transition-colors cursor-pointer text-left">
+              <summary className="p-4 md:p-6 text-xl font-flux font-[900] leading-none tracking-[-0.08em] uppercase text-[#cccccc] opacity-90 list-none flex justify-between items-center outline-none">
+                Figma Designs
+                <span className="text-sm transition-transform group-open:rotate-180">▼</span>
+              </summary>
+              <div className="p-4 md:p-6 border-t border-zinc-800 flex flex-col gap-3">
+                <a href="https://resize-lively-62023122.figma.site/" target="_blank" rel="noreferrer" className="text-zinc-400 hover:text-white font-mono text-sm transition-colors flex items-center gap-2 group/link">
+                  <span className="w-1.5 h-1.5 bg-zinc-600 group-hover/link:bg-white transition-colors" /> Nimo Water Station Management UI
+                </a>
+                <a href="https://swab-quirky-75640463.figma.site/" target="_blank" rel="noreferrer" className="text-zinc-400 hover:text-white font-mono text-sm transition-colors flex items-center gap-2 group/link">
+                  <span className="w-1.5 h-1.5 bg-zinc-600 group-hover/link:bg-white transition-colors" /> Hardware Inventory Management UI
+                </a>
+                <a href="https://final-buffet-55313687.figma.site/" target="_blank" rel="noreferrer" className="text-zinc-400 hover:text-white font-mono text-sm transition-colors flex items-center gap-2 group/link">
+                  <span className="w-1.5 h-1.5 bg-zinc-600 group-hover/link:bg-white transition-colors" /> Ticketing UI
+                </a>
+                <a href="https://deck-storm-25732394.figma.site/" target="_blank" rel="noreferrer" className="text-zinc-400 hover:text-white font-mono text-sm transition-colors flex items-center gap-2 group/link">
+                  <span className="w-1.5 h-1.5 bg-zinc-600 group-hover/link:bg-white transition-colors" /> Coffee Shop POS UI
+                </a>
+                <a href="https://kilt-poodle-95374296.figma.site/" target="_blank" rel="noreferrer" className="text-zinc-400 hover:text-white font-mono text-sm transition-colors flex items-center gap-2 group/link">
+                  <span className="w-1.5 h-1.5 bg-zinc-600 group-hover/link:bg-white transition-colors" /> Stakeholder UI
+                </a>
+              </div>
+            </details>
           </div>
         </div>
       </section>

@@ -11,16 +11,12 @@
             "id": "f5065e6495a60cdf",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "bases",
               "state": {
-                "file": "Untitled.canvas",
-                "viewState": {
-                  "x": 27.541171629275787,
-                  "y": -255.21000751438464,
-                  "zoom": -1.0754284915526713
-                }
+                "file": "Untitled.base",
+                "viewName": "Table"
               },
-              "icon": "lucide-layout-dashboard",
+              "icon": "lucide-table",
               "title": "Untitled"
             }
           }
@@ -188,6 +184,9 @@
   },
   "active": "f5065e6495a60cdf",
   "lastOpenFiles": [
+    "Untitled.canvas",
+    "Untitled.base",
+    "Untitled",
     "Screenshot 2026-07-24 224142.png",
     "s.png",
     "s.png.png",
@@ -199,13 +198,10 @@
     "node_modules/@radix-ui/react-slot/node_modules/@radix-ui/primitive/dist/internal/is-development.true.mjs.map",
     "node_modules/@radix-ui/react-slot/node_modules/@radix-ui/primitive/dist/internal/is-development.true.mjs",
     "node_modules/@radix-ui/react-slot/node_modules/@radix-ui/primitive/dist/internal/is-development.false.js",
-    "node_modules/@radix-ui/react-slot/node_modules/@radix-ui/primitive/dist/internal/is-development.false.js.map",
-    "node_modules/@radix-ui/react-slot/node_modules/@radix-ui/primitive/dist/internal/is-development.true.js.map",
     "node_modules/radix-ui/node_modules/@radix-ui/react-slot/README.md",
     "node_modules/@radix-ui/react-popover/node_modules/@radix-ui/react-slot/README.md",
     "node_modules/@radix-ui/react-primitive/node_modules/@radix-ui/react-slot/README.md",
     "Untitled.md",
-    "Untitled.canvas",
     "2026-07-24.md",
     "node_modules/execa/readme.md",
     "node_modules/eslint-plugin-react/README.md",
